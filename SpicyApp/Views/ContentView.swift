@@ -140,7 +140,7 @@ import SwiftUI
          .background(Color.white)
          .cornerRadius(10)
          .shadow(radius: 5)
-         .foregroundColor(.black)
+         .foregroundColor(.green)
      }
  }
 
