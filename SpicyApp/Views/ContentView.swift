@@ -22,7 +22,7 @@ import SwiftUI
  }
 
  struct ContentView: View {
-     @State var showView = false //for the modal sheet
+     @State var showView = false //for the modal sheet/Users/viacheslav/Developer/AcademyProject/SpicyApp/Views/ContentView.swift
      /// List of users
      @State var users: [User] = [
          User(id: 0, challengeName: "Coffee with a stranger", points: 250, currentlyTaking: 4, imageName: "coffee1", tags: "Cheap, Social, Surroundings"),
@@ -96,7 +96,7 @@ import SwiftUI
                          }
                          .foregroundColor(.black)
                          .sheet(isPresented: $showView) {
-                             SecondView()
+                             ModalView()
                          }
                      }
                  }
