@@ -85,6 +85,7 @@ import SwiftUI
                  }
                  .padding(.horizontal)
              }
+//             .frame(height: 500)
              .padding(.bottom)
              .background(Color.white)
              .cornerRadius(10)

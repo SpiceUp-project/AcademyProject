@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SecondView: View {
+struct ModalView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -42,5 +42,12 @@ struct SecondView: View {
         }
     }
         }
+    }
+}
+
+
+struct ModalView_Previews: PreviewProvider {
+    static var previews: some View {
+        ModalView()
     }
 }
