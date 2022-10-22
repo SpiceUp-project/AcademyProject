@@ -85,7 +85,7 @@ import SwiftUI
                                                  self.users.removeAll { $0.id == removedUser.id
                                                  }
                                              })
-                                             .animation(.spring())
+//                                             .animation(.spring())
                                              .frame(width: self.getCardWidth(geometry, id: user.id), height: 400)
                                              .offset(x: 0, y: self.getCardOffset(geometry, id: user.id))
                                          }
@@ -118,32 +118,6 @@ import SwiftUI
              }.padding()
          }
      }
-     
- 
-
- struct DateView: View {
-     
-     var body: some View {
-         VStack {
-             HStack {
-                 VStack(alignment: .leading) {
-                     Text("Thursday, 19th October") //needs to be changed in order to dynamically get the current date
-                         .font(.title)
-                         .bold()
-                     Text("Choose today's challenge!") //can be changed to "today's first" "today's second" according to how many challenges done etc
-                         .font(.subheadline)
-                         .foregroundColor(.gray)
-                 }
-                 Spacer()
-             }.padding()
-         }
-         .background(Color.white)
-         .cornerRadius(10)
-         .shadow(radius: 5)
-         .foregroundColor(.black)
-     }
- }
-
 
  struct ContentView_Previews: PreviewProvider {
      static var previews: some View {

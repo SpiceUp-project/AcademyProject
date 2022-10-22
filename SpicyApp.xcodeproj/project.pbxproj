@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1329397D29042C1300E5AAAC /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1329397C29042C1300E5AAAC /* DateView.swift */; };
+		1329398129043BAB00E5AAAC /* Challenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1329398029043BAB00E5AAAC /* Challenges.swift */; };
 		4F85556029002DAE00786E46 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F85555F29002DAE00786E46 /* ModalView.swift */; };
 		4FA9A63F29015349001A2931 /* SpicyTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA9A63E29015349001A2931 /* SpicyTabView.swift */; };
 		4FB5C70628FD7086003AA55E /* SpicyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5C70528FD7086003AA55E /* SpicyAppApp.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1329397C29042C1300E5AAAC /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
+		1329398029043BAB00E5AAAC /* Challenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Challenges.swift; path = SpicyApp/Views/Challenges.swift; sourceTree = SOURCE_ROOT; };
 		4F85555F29002DAE00786E46 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		4FA9A63E29015349001A2931 /* SpicyTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpicyTabView.swift; sourceTree = "<group>"; };
 		4FB5C70228FD7086003AA55E /* SpicyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpicyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +88,7 @@
 				4FB5C72F28FD729F003AA55E /* CardView.swift */,
 				4F85555F29002DAE00786E46 /* ModalView.swift */,
 				4FA9A63E29015349001A2931 /* SpicyTabView.swift */,
+				1329397C29042C1300E5AAAC /* DateView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -91,6 +96,7 @@
 		4FA9A63529013839001A2931 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1329398029043BAB00E5AAAC /* Challenges.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -282,10 +288,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1329397D29042C1300E5AAAC /* DateView.swift in Sources */,
 				4FB5C70828FD7086003AA55E /* ContentView.swift in Sources */,
 				4FB5C73028FD729F003AA55E /* CardView.swift in Sources */,
 				4F85556029002DAE00786E46 /* ModalView.swift in Sources */,
 				4FB5C70628FD7086003AA55E /* SpicyAppApp.swift in Sources */,
+				1329398129043BAB00E5AAAC /* Challenges.swift in Sources */,
 				4FA9A63F29015349001A2931 /* SpicyTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

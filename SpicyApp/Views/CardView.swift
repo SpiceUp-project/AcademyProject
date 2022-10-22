@@ -90,7 +90,7 @@ import SwiftUI
              .background(Color.white)
              .cornerRadius(10)
              .shadow(radius: 5)
-             .animation(.interactiveSpring())
+//             .animation(.interactiveSpring())
              .offset(x: self.translation.width, y: 0)
              .rotationEffect(.degrees(Double(self.translation.width / geometry.size.width) * 25), anchor: .bottom)
              .gesture(
