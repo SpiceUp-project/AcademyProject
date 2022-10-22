@@ -13,9 +13,6 @@
 		4FB5C70828FD7086003AA55E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5C70728FD7086003AA55E /* ContentView.swift */; };
 		4FB5C70A28FD7087003AA55E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FB5C70928FD7087003AA55E /* Assets.xcassets */; };
 		4FB5C70D28FD7087003AA55E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FB5C70C28FD7087003AA55E /* Preview Assets.xcassets */; };
-		4FB5C71728FD7087003AA55E /* SpicyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5C71628FD7087003AA55E /* SpicyAppTests.swift */; };
-		4FB5C72128FD7087003AA55E /* SpicyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5C72028FD7087003AA55E /* SpicyAppUITests.swift */; };
-		4FB5C72328FD7087003AA55E /* SpicyAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5C72228FD7087003AA55E /* SpicyAppUITestsLaunchTests.swift */; };
 		4FB5C73028FD729F003AA55E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5C72F28FD729F003AA55E /* CardView.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,10 +42,7 @@
 		4FB5C70928FD7087003AA55E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FB5C70C28FD7087003AA55E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4FB5C71228FD7087003AA55E /* SpicyAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpicyAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4FB5C71628FD7087003AA55E /* SpicyAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpicyAppTests.swift; sourceTree = "<group>"; };
 		4FB5C71C28FD7087003AA55E /* SpicyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpicyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4FB5C72028FD7087003AA55E /* SpicyAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpicyAppUITests.swift; sourceTree = "<group>"; };
-		4FB5C72228FD7087003AA55E /* SpicyAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpicyAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4FB5C72F28FD729F003AA55E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,8 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				4FB5C70428FD7086003AA55E /* SpicyApp */,
-				4FB5C71528FD7087003AA55E /* SpicyAppTests */,
-				4FB5C71F28FD7087003AA55E /* SpicyAppUITests */,
 				4FB5C70328FD7086003AA55E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -133,23 +125,6 @@
 				4FB5C70C28FD7087003AA55E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		4FB5C71528FD7087003AA55E /* SpicyAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				4FB5C71628FD7087003AA55E /* SpicyAppTests.swift */,
-			);
-			path = SpicyAppTests;
-			sourceTree = "<group>";
-		};
-		4FB5C71F28FD7087003AA55E /* SpicyAppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				4FB5C72028FD7087003AA55E /* SpicyAppUITests.swift */,
-				4FB5C72228FD7087003AA55E /* SpicyAppUITestsLaunchTests.swift */,
-			);
-			path = SpicyAppUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,7 +269,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FB5C71728FD7087003AA55E /* SpicyAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,8 +276,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FB5C72328FD7087003AA55E /* SpicyAppUITestsLaunchTests.swift in Sources */,
-				4FB5C72128FD7087003AA55E /* SpicyAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

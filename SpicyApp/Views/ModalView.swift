@@ -6,44 +6,59 @@
 //
 
 import SwiftUI
+struct GrowingButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View { configuration.label
+            .padding(20)
+            .padding(.horizontal, 30)
+            .background(.gray)
+            .foregroundColor(.white)
+            .clipShape(Rectangle())
+            .cornerRadius(10)
+            .scaleEffect(configuration.isPressed ? 1.2 : 1)
+            .animation(.easeOut(duration:0.2), value: configuration.isPressed)
+        
+    }
+}
 
 struct ModalView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        
-        ZStack {
-            
-            Color.orange
+        VStack {
+            Color.white
                 .ignoresSafeArea()
             
-            VStack {
-                Button {
-                    presentationMode.wrappedValue.dismiss()
-                    
-                } label: {
-                    Image(systemName: "x.circle")
-                        .foregroundColor(.black)
-                        .font(.largeTitle)
+            Text("Take a cup of coffee with a stranger")
+                .font(.title)
+                .multilineTextAlignment(.leading)
+                .offset(y: 6)
+                .padding(.bottom, 650)
+            //.frame()
+            
+            HStack {
+                Button("Dismiss") {
+                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+
                 }
-                .padding()
-                .frame(maxWidth: .infinity, alignment: .trailing)
-                Spacer()
+                .buttonStyle(GrowingButton())
+                
+                Button("Done  ") {
+                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                }
+                .buttonStyle(GrowingButton())
+                
+
             }
-            VStack {
-        ScrollView {
-            Text("This is the second one")
-                .font(.title2.weight(.heavy))
+            
+            
+            
         }
         
-        ScrollView(.horizontal) {
-            Text("hello dsjfdfsdgodgjsdogjncncjcjdfjgjgjkbkbkbkbkbk")
-        }
-    }
-        }
+        
     }
 }
+
 
 
 struct ModalView_Previews: PreviewProvider {
