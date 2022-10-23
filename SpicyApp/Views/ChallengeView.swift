@@ -9,24 +9,35 @@ import SwiftUI
 
 struct ChallengeView: View {
     @State var challenge = "Take a cup of coffee with a stranger"
-    @State var timerCount = "04:50"
+    @State var timerCount: TimeInterval = 86000
+    @State var categories = ["Calm", "Communication", "Cheap", "Stranger"]
+    
     var body: some View {
         VStack{
             header
             timer
+            Image("coffee1")
+                .resizable()
+                .border(Color.red)
             
-            
-            Spacer()
             Text(challenge)
+                .font(.title)
             
-            
+            categoryPills
             
             
         }
     }
 }
 
+
 private extension ChallengeView {
+    func convertSecondsToTimeLabel(_ seconds: TimeInterval) -> String {
+        let hour = Int(seconds / 3600)
+        let minutes = Int(seconds / 60) % 60
+        return String(format: "%02d:%02d", hour, minutes)
+    }
+    
     var header: some View {
         HStack{
             Text("Today's challenge")
@@ -35,18 +46,34 @@ private extension ChallengeView {
             Circle.init()
                 .frame(width: 30)
                 .foregroundColor(.green)
+            
+
         }
         .padding()
     }
     
     var timer: some View {
-        ZStack{
-            Color("appYellow")
-                .frame(width: 350, height:100)
-                .clipShape(RoundedRectangle(cornerSize: CGSize(width: 30, height: 30)))
-                .shadow(radius: 10)
-            Text(timerCount)
-                .font(.system(size: 80))
+        Text(convertSecondsToTimeLabel(timerCount))
+            .font(.system(size: 80))
+            .background {
+                Color("appYellow")
+                    .frame(width: 350, height:100)
+                    .clipShape(RoundedRectangle(cornerRadius: 30))
+                    .shadow(radius: 10)
+            }
+    }
+    
+    var categoryPills: some View {
+        ScrollView(.horizontal) {
+            HStack(alignment: .center) {
+                ForEach(categories, id: \.self) { category in
+                    Text(category)
+                        .padding(5)
+                        .background { Color("appYellow") }
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                    
+                }
+            }
         }
     }
 }
