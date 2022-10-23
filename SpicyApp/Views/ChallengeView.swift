@@ -22,13 +22,43 @@ struct ChallengeView: View {
             
             Text(challenge)
                 .font(.title)
-            
             categoryPills
+            HStack{
+                Button("Dismiss") {
+                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                }
+                .font(.title2)
+                .accentColor(.black)
+                .accentColor(.black)
+                .background(
+                    Color("appYellow")
+                    )
+                .background(Color("appYellow"))
+                .cornerRadius(18)
+                .shadow(color: .gray, radius: 5, x: 0, y: 2)
+
+                Button("Done") {
+                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+
+                }
+                .font(.title2)
+                .accentColor(.black)
+                .background(
+                    Color("appYellow")
+                    )
+                .background(Color("appYellow"))
+                .cornerRadius(18)
+                .shadow(color: .gray, radius: 5, x: 0, y: 2)
+            }
             
-            
+     
         }
-    }
-}
+
+            }
+
+        }
+
+
 
 
 private extension ChallengeView {
@@ -47,7 +77,8 @@ private extension ChallengeView {
                 .frame(width: 30)
                 .foregroundColor(.green)
             
-
+            
+            
         }
         .padding()
     }
@@ -76,10 +107,12 @@ private extension ChallengeView {
             }
         }
     }
-}
 
-struct ChallengeView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChallengeView()
     }
-}
+    
+    struct ChallengeView_Previews: PreviewProvider {
+        static var previews: some View {
+            ChallengeView()
+        }
+    }
+
