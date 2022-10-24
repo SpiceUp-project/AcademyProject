@@ -16,7 +16,7 @@ struct MainNavigationView: View {
                 .navigationTitle("Challenges")
                 .toolbar {
                     ToolbarItem (placement: .navigationBarTrailing){
-                        NavigationLink(destination: TestView2()) {
+                        NavigationLink(destination: TestView()) {
                             Image(systemName: "person")
                                 .resizable()
                                 .frame(width: 60, height: 60)
