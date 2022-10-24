@@ -10,7 +10,6 @@ import SwiftUI
  struct CardView: View {
      @State private var translation: CGSize = .zero
      @State private var swipeStatus: LikeDislike = .none
-//     @State var tags = self.challenge.tags
 
      private var challenge: Challenge
      private var onRemove: (_ challenge: Challenge) -> Void
@@ -82,8 +81,9 @@ import SwiftUI
                                          .padding(.horizontal, 15)
                                          .background { Color("appYellow") }
                                          .clipShape(RoundedRectangle(cornerRadius: 15))
-                                     
-                                 }
+                                         .lineLimit(1)
+//                                         .fixedSize(horizontal: false, vertical: true)
+                                    }
                              }
                          Text("Earn \(self.challenge.points) points")
                              .font(.subheadline)
@@ -128,21 +128,6 @@ import SwiftUI
      }
  }
 
-//var categoryPills: some View {
-//    ScrollView(.horizontal) {
-//        HStack(alignment: .center) {
-//            ForEach(tags, id: \.self) { tag in
-//                Text(tag)
-//                    .padding(5)
-//                    .background { Color("appYellow") }
-//                    .clipShape(RoundedRectangle(cornerRadius: 15))
-//
-//            }
-//        }
-//    }
-//}
-
- // 7
  struct CardView_Previews: PreviewProvider {
      static var previews: some View {
          CardView(challenge: Challenge(id: 0, challengeName: "Challenge name", points: 23, currentlyTaking: 4, imageName: "shelter", tags: ["Tag 1", "Tag 2", "Tag 3", "Tag long long"]),

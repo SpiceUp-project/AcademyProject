@@ -12,18 +12,7 @@ import SwiftUI
      @State var showView = false //for the modal sheet/Users/viacheslav/Developer/AcademyProject/SpicyApp/Views/ContentView.swift
      /// List of challenges
 
-     @State var challenges: [Challenge] = [
-        Challenge(id: 0, challengeName: "Coffee with a stranger", points: 250, currentlyTaking: 4, imageName: "coffee1", tags: ["Cheap", "Social", "Surroundings"]),
-        Challenge(id: 1, challengeName: "Dance in the rain", points: 100, currentlyTaking: 4, imageName: "rain1", tags: ["Fun", "Inner Child", "Creativity"]),
-        Challenge(id: 2, challengeName: "Book a solo trip", points: 1200, currentlyTaking: 4, imageName: "trip", tags: ["Travel", "Learning", "Self Reliance"]),
-        Challenge(id: 3, challengeName: "Become a Masterchef", points: 80, currentlyTaking: 4, imageName: "chef", tags: ["Cooking", "Self Confidence", "Skill"]),
-        Challenge(id: 4, challengeName: "Memorize a poem", points: 50, currentlyTaking: 4, imageName: "poem", tags: ["Skill", "Learning", "Academia", "Literature"]),
-        Challenge(id: 5, challengeName: "Make eye contact", points: 90, currentlyTaking: 4, imageName: "eye", tags: ["Social", "Self Confidence"]),
-        Challenge(id: 6, challengeName: "Hug 5 people", points: 400, currentlyTaking: 4, imageName: "hug", tags: ["Social", "Affection"]),
-        Challenge(id: 7, challengeName: "Visit an animal shelter", points: 23, currentlyTaking: 230, imageName: "shelter", tags: ["Social", "Volunteering", "Fun"]),
-        Challenge(id: 8, challengeName: "Have a photoshoot", points: 700, currentlyTaking: 4, imageName: "shoot", tags: ["Self Confidence", "Creativity", "Beauty", "Photography"]),
-        Challenge(id: 9, challengeName: "Get lost", points: 925, currentlyTaking: 4, imageName: "lost", tags: ["Travel", "Critical Thinking", "Self Confidence"])
-     ]
+     @State var shuffledChallenges: [Challenge] = challenges.shuffled()
 
      /// Return the CardViews width for the given offset in the array
      /// - Parameters:
@@ -43,7 +32,7 @@ import SwiftUI
      }
 
      private var maxID: Int {
-         return self.challenges.map { $0.id }.max() ?? 0
+         return self.shuffledChallenges.map { $0.id }.max() ?? 0
      }
 
      var body: some View {
@@ -56,21 +45,21 @@ import SwiftUI
                      .background(Color.blue)
                      .clipShape(Circle())
                      .offset(x: -geometry.size.width / 4, y: -geometry.size.height / 2)
-                 
+
                  VStack(spacing: 24) {
-                   
+
                          DateView()
                          Button {
                              showView.toggle()
                          } label: {
                              ZStack {
-                                 ForEach(self.challenges, id: \.self) { challenge in
+                                 ForEach(self.shuffledChallenges, id: \.self) { challenge in
                                      Group {
                                          // Range Operator
                                          if (self.maxID - 3)...self.maxID ~= challenge.id {
                                              CardView(challenge: challenge, onRemove: { removedChallenge in
                                                  // Remove that user from our array
-                                                 self.challenges.removeAll { $0.id == removedChallenge.id
+                                                 self.shuffledChallenges.removeAll { $0.id == removedChallenge.id
                                                  }
                                              })
 //                                             .animation(.spring())
