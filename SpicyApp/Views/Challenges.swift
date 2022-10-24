@@ -15,7 +15,7 @@ struct Challenge: Hashable, CustomStringConvertible {
     let points: Int
     let currentlyTaking: Int
     let imageName: String
-    let tags: String
+    let tags: [String]
 
     var description: String {
         return "\(challengeName), id: \(id)"

@@ -91,10 +91,10 @@
 				4FB5C70728FD7086003AA55E /* ContentView.swift */,
 				4FB5C72F28FD729F003AA55E /* CardView.swift */,
 				4F85555F29002DAE00786E46 /* ModalView.swift */,
-				4FA9A63E29015349001A2931 /* SpicyTabView.swift */,
 				1329397C29042C1300E5AAAC /* DateView.swift */,
 				1329398229046A7A00E5AAAC /* MainNavigationView.swift */,
 				132939862904843C00E5AAAC /* TestView.swift */,
+				4FA9A63E29015349001A2931 /* SpicyTabView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
