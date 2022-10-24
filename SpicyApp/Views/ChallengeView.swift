@@ -22,27 +22,32 @@ struct ChallengeView: View {
             
             Text(challenge)
                 .font(.title)
+            Spacer()
             categoryPills
-            HStack(spacing:50){
-                Button("Dismiss") {
+            HStack(spacing:20){
+                
+                Button("Give up") {
                     /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
                 }
+                .padding(.horizontal,30)
+
+                .frame(maxWidth: .infinity)
                 .padding(20)
-                .font(.title2)
+                .font(.title3)
                 .accentColor(.black)
                 .accentColor(.black)
-                .background(
-                    Color("appYellow")
-                    )
+                .background(Color("appGray"))
                 .background(Color("appYellow"))
                 .cornerRadius(18)
                 .shadow(color: .gray, radius: 5, x: 0, y: 2)
+                
                          Button("Done") {
                     /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
 
                 }
+                .frame(maxWidth: .infinity)
                 .padding(20)
-                .font(.title2)
+                .font(.title3)
                 .accentColor(.black)
                 .background(
                     Color("appYellow")
@@ -51,6 +56,7 @@ struct ChallengeView: View {
                 .cornerRadius(18)
                 .shadow(color: .gray, radius: 5, x: 0, y: 2)
             }
+            .padding()
             
      
         }
