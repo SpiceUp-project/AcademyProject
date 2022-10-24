@@ -12,7 +12,7 @@ struct TestView: View {
         
         VStack {
             Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            NavigationLink(destination: Text("Hello, World!")) {
+            NavigationLink(destination: SpicyTabView()) {
                 Image("_Messages-avatar")
                     .resizable()
                     .frame(width: 60, height: 60)
