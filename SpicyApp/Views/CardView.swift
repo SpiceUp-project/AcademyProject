@@ -74,17 +74,17 @@ import SwiftUI
                          Text("\(self.challenge.challengeName)")
                              .font(.title)
                              .bold()
-                         ScrollView(.horizontal) {
-                             HStack(alignment: .center) {
+                         HStack(alignment: .center) {
                                  ForEach(self.challenge.tags, id: \.self) { tag in
                                      Text(tag)
-                                         .padding(5)
+                                         .font(.footnote)
+                                         .padding(.vertical, 5)
+                                         .padding(.horizontal, 15)
                                          .background { Color("appYellow") }
                                          .clipShape(RoundedRectangle(cornerRadius: 15))
                                      
                                  }
                              }
-                         }
 //                         Text(self.challenge.tags)
 //                             .font(.subheadline)
 //                             .bold()
