@@ -11,8 +11,7 @@ import SwiftUI
 struct SpicyAppApp: App {
     var body: some Scene {
         WindowGroup {
-                ContentView()
-                
+            MainNavigationView()
             }
         }
     }
