@@ -11,6 +11,7 @@
 		1329398129043BAB00E5AAAC /* Challenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1329398029043BAB00E5AAAC /* Challenges.swift */; };
 		1329398329046A7A00E5AAAC /* MainNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1329398229046A7A00E5AAAC /* MainNavigationView.swift */; };
 		132939872904843C00E5AAAC /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132939862904843C00E5AAAC /* TestView.swift */; };
+		13BFB56929070E36008BA3B5 /* OneMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFB56829070E36008BA3B5 /* OneMoreView.swift */; };
 		4F85556029002DAE00786E46 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F85555F29002DAE00786E46 /* ModalView.swift */; };
 		4FA9A63F29015349001A2931 /* SpicyTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA9A63E29015349001A2931 /* SpicyTabView.swift */; };
 		4FB5C70628FD7086003AA55E /* SpicyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5C70528FD7086003AA55E /* SpicyAppApp.swift */; };
@@ -42,6 +43,7 @@
 		1329398029043BAB00E5AAAC /* Challenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Challenges.swift; path = SpicyApp/Views/Challenges.swift; sourceTree = SOURCE_ROOT; };
 		1329398229046A7A00E5AAAC /* MainNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationView.swift; sourceTree = "<group>"; };
 		132939862904843C00E5AAAC /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		13BFB56829070E36008BA3B5 /* OneMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneMoreView.swift; sourceTree = "<group>"; };
 		4F85555F29002DAE00786E46 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		4FA9A63E29015349001A2931 /* SpicyTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpicyTabView.swift; sourceTree = "<group>"; };
 		4FB5C70228FD7086003AA55E /* SpicyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpicyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,7 @@
 				1329398229046A7A00E5AAAC /* MainNavigationView.swift */,
 				132939862904843C00E5AAAC /* TestView.swift */,
 				4FA9A63E29015349001A2931 /* SpicyTabView.swift */,
+				13BFB56829070E36008BA3B5 /* OneMoreView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			files = (
 				1329397D29042C1300E5AAAC /* DateView.swift in Sources */,
 				4FB5C70828FD7086003AA55E /* ContentView.swift in Sources */,
+				13BFB56929070E36008BA3B5 /* OneMoreView.swift in Sources */,
 				4FB5C73028FD729F003AA55E /* CardView.swift in Sources */,
 				1329398329046A7A00E5AAAC /* MainNavigationView.swift in Sources */,
 				4F85556029002DAE00786E46 /* ModalView.swift in Sources */,
