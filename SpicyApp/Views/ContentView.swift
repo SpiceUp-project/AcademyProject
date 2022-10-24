@@ -101,19 +101,20 @@ import SwiftUI
                      }
                  }
                  
-                 
+
                  Spacer()
                  Button {
                      print("Edit button was tapped")
                  } label: {
                      Label("Get random challenge", systemImage: "dice.fill")
                          .font(.title2)
+                         .frame(width: 330)
                          .padding()
+//                         .frame(width: .size.width)
                          .foregroundColor(.black)
                          .background(Color("appYellow"))
-                         .cornerRadius(18)
+                         .cornerRadius(10)
                          .shadow(color: .gray, radius: 5, x: 0, y: 2)
-                     
                  }
              }.padding()
          }
