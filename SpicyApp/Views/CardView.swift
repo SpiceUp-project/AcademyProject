@@ -73,6 +73,7 @@ import SwiftUI
                          Text("\(self.challenge.challengeName)")
                              .font(.title)
                              .bold()
+                         categoryPills
                          Text(self.challenge.tags)
                              .font(.subheadline)
                              .bold()
@@ -119,10 +120,24 @@ import SwiftUI
      }
  }
 
+var categoryPills: some View {
+    ScrollView(.horizontal) {
+        HStack(alignment: .center) {
+            ForEach(categories, id: \.self) { category in
+                Text(category)
+                    .padding(5)
+                    .background { Color("appYellow") }
+                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                
+            }
+        }
+    }
+}
+
  // 7
  struct CardView_Previews: PreviewProvider {
      static var previews: some View {
-         CardView(challenge: Challenge(id: 0, challengeName: "Cindy", points: 23, currentlyTaking: 4, imageName: "person_1", tags: "Coach"),
+         CardView(challenge: Challenge(id: 0, challengeName: "Cindy", points: 23, currentlyTaking: 4, imageName: "person_1", tags: ["Coach"]),
                   onRemove: { _ in
                      // do nothing
              })
