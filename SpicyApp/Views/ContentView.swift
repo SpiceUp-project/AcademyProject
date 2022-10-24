@@ -79,7 +79,6 @@ import SwiftUI
                  }
                  
 
-                 Spacer()
                  Button {
                      print("Edit button was tapped")
                  } label: {
