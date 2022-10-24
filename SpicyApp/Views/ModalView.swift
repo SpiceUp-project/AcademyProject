@@ -35,7 +35,18 @@ struct ModalView: View {
                         Text("Take a cup of coffee with a stranger" + "\n")
                             .font(.title)
                             .multilineTextAlignment(.leading)
-
+                        HStack(alignment: .center) {
+                                ForEach(self.challenge.tags, id: \.self) { tag in
+                                    Text(tag)
+                                        .font(.footnote)
+                                        .padding(.vertical, 5)
+                                        .padding(.horizontal, 15)
+                                        .background { Color("appYellow") }
+                                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                                        .lineLimit(1)
+//                                         .fixedSize(horizontal: false, vertical: true)
+                                   }
+                            }
                         
                         HStack {
                             Image(systemName: "medal")
