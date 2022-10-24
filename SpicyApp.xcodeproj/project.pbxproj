@@ -17,6 +17,7 @@
 		4FB5C72128FD7087003AA55E /* SpicyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5C72028FD7087003AA55E /* SpicyAppUITests.swift */; };
 		4FB5C72328FD7087003AA55E /* SpicyAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5C72228FD7087003AA55E /* SpicyAppUITestsLaunchTests.swift */; };
 		4FB5C73028FD729F003AA55E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5C72F28FD729F003AA55E /* CardView.swift */; };
+		D50A043E2907379B002606DE /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50A043D2907379B002606DE /* Color+Extension.swift */; };
 		D5ACE30629042A7100756F7A /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACE30529042A7100756F7A /* ChallengeView.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		4FB5C72028FD7087003AA55E /* SpicyAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpicyAppUITests.swift; sourceTree = "<group>"; };
 		4FB5C72228FD7087003AA55E /* SpicyAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpicyAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4FB5C72F28FD729F003AA55E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		D50A043D2907379B002606DE /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		D5ACE30529042A7100756F7A /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +103,7 @@
 		4FB5C6F928FD7086003AA55E = {
 			isa = PBXGroup;
 			children = (
+				D50A043D2907379B002606DE /* Color+Extension.swift */,
 				4FB5C70428FD7086003AA55E /* SpicyApp */,
 				4FB5C71528FD7087003AA55E /* SpicyAppTests */,
 				4FB5C71F28FD7087003AA55E /* SpicyAppUITests */,
@@ -286,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FB5C70828FD7086003AA55E /* ContentView.swift in Sources */,
+				D50A043E2907379B002606DE /* Color+Extension.swift in Sources */,
 				4FB5C73028FD729F003AA55E /* CardView.swift in Sources */,
 				D5ACE30629042A7100756F7A /* ChallengeView.swift in Sources */,
 				4F85556029002DAE00786E46 /* ModalView.swift in Sources */,
