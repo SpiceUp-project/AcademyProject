@@ -85,9 +85,6 @@ import SwiftUI
                                      
                                  }
                              }
-//                         Text(self.challenge.tags)
-//                             .font(.subheadline)
-//                             .bold()
                          Text("Earn \(self.challenge.points) points")
                              .font(.subheadline)
                              .foregroundColor(.gray)
@@ -148,7 +145,7 @@ import SwiftUI
  // 7
  struct CardView_Previews: PreviewProvider {
      static var previews: some View {
-         CardView(challenge: Challenge(id: 0, challengeName: "Cindy", points: 23, currentlyTaking: 4, imageName: "person_1", tags: ["Coach"]),
+         CardView(challenge: Challenge(id: 0, challengeName: "Challenge name", points: 23, currentlyTaking: 4, imageName: "shelter", tags: ["Tag 1", "Tag 2", "Tag 3", "Tag long long"]),
                   onRemove: { _ in
                      // do nothing
              })
