@@ -18,11 +18,18 @@ struct ChallengeView: View {
             timer
             Image("coffee1")
                 .resizable()
-                .border(Color.red)
+                .frame(width:200, height:200)
+                .scaledToFit()
             
             Text(challenge)
                 .font(.title)
+                .multilineTextAlignment(.leading)
+                .padding()
+                .fixedSize(horizontal: false, vertical: true)
+
+            
             Spacer()
+                .padding()
             categoryPills
             HStack(spacing:20){
                 
@@ -109,6 +116,7 @@ private extension ChallengeView {
                         .padding(5)
                         .background { Color("appYellow") }
                         .clipShape(RoundedRectangle(cornerRadius: 15))
+                    
                     
                 }
             }
