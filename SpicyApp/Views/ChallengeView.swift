@@ -8,22 +8,36 @@
 import SwiftUI
 
 struct ChallengeView: View {
-    @State var challenge = "Take a cup of coffee with a stranger"
+    
+    private var challenge: Challenge
+//    @State var challenge = "Take a cup of coffee with a stranger"
     @State var timerCount: TimeInterval = 86000
-    @State var categories = ["Calm", "Communication", "Cheap", "Stranger"]
+//    @State var categories = ["Calm", "Communication", "Cheap", "Stranger"]
     
     var body: some View {
         VStack{
-            header
             timer
-            Image("coffee1")
-                .resizable()
-                .border(Color.red)
-            
-            Text(challenge)
-                .font(.title)
+            HStack {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("\(self.challenge.challengeName)")
+                        .font(.title)
+                        .bold()
+                    HStack(alignment: .center) {
+                            ForEach(self.challenge.tags, id: \.self) { tag in
+                                Text(tag)
+                                    .font(.footnote)
+                                    .padding(.vertical, 5)
+                                    .padding(.horizontal, 15)
+                                    .background { Color("appYellow") }
+                                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                                    .lineLimit(1)
+                               }
+                        }
+                    Text("Earn \(self.challenge.points) points")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                }
             Spacer()
-            categoryPills
             HStack(spacing:20){
                 
                 Button("Give up") {
@@ -57,13 +71,9 @@ struct ChallengeView: View {
                 .shadow(color: .gray, radius: 5, x: 0, y: 2)
             }
             .padding()
-            
-     
         }
-
-            }
-
-        }
+    }
+}
 
 
 
@@ -73,21 +83,6 @@ private extension ChallengeView {
         let hour = Int(seconds / 3600)
         let minutes = Int(seconds / 60) % 60
         return String(format: "%02d:%02d", hour, minutes)
-    }
-    
-    var header: some View {
-        HStack{
-            Text("Today's challenge")
-                .font(.title)
-            Spacer()
-            Circle.init()
-                .frame(width: 30)
-                .foregroundColor(.green)
-            
-            
-            
-        }
-        .padding()
     }
     
     var timer: some View {
@@ -100,22 +95,7 @@ private extension ChallengeView {
                     .shadow(radius: 10)
             }
     }
-    
-    var categoryPills: some View {
-        ScrollView(.horizontal) {
-            HStack(alignment: .center) {
-                ForEach(categories, id: \.self) { category in
-                    Text(category)
-                        .padding(5)
-                        .background { Color("appYellow") }
-                        .clipShape(RoundedRectangle(cornerRadius: 15))
-                    
-                }
-            }
-        }
-    }
-
-    }
+}
     
     struct ChallengeView_Previews: PreviewProvider {
         static var previews: some View {

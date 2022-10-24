@@ -18,7 +18,6 @@
 		4FB5C70A28FD7087003AA55E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FB5C70928FD7087003AA55E /* Assets.xcassets */; };
 		4FB5C70D28FD7087003AA55E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FB5C70C28FD7087003AA55E /* Preview Assets.xcassets */; };
 		4FB5C73028FD729F003AA55E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5C72F28FD729F003AA55E /* CardView.swift */; };
-		D5ACE30629042A7100756F7A /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACE30529042A7100756F7A /* ChallengeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,10 +87,10 @@
 				4FB5C72F28FD729F003AA55E /* CardView.swift */,
 				4F85555F29002DAE00786E46 /* ModalView.swift */,
 				1329397C29042C1300E5AAAC /* DateView.swift */,
+				D5ACE30529042A7100756F7A /* ChallengeView.swift */,
 				1329398229046A7A00E5AAAC /* MainNavigationView.swift */,
 				132939862904843C00E5AAAC /* TestView.swift */,
 				4FA9A63E29015349001A2931 /* SpicyTabView.swift */,
-				D5ACE30529042A7100756F7A /* ChallengeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
