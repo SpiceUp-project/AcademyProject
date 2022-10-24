@@ -10,6 +10,7 @@ import SwiftUI
  struct CardView: View {
      @State private var translation: CGSize = .zero
      @State private var swipeStatus: LikeDislike = .none
+     @State var tags = ["Calm", "Communication", "Cheap", "Stranger"]
 
      private var challenge: Challenge
      private var onRemove: (_ challenge: Challenge) -> Void
@@ -74,9 +75,9 @@ import SwiftUI
                              .font(.title)
                              .bold()
                          categoryPills
-                         Text(self.challenge.tags)
-                             .font(.subheadline)
-                             .bold()
+//                         Text(self.challenge.tags)
+//                             .font(.subheadline)
+//                             .bold()
                          Text("Earn \(self.challenge.points) points")
                              .font(.subheadline)
                              .foregroundColor(.gray)
@@ -123,8 +124,8 @@ import SwiftUI
 var categoryPills: some View {
     ScrollView(.horizontal) {
         HStack(alignment: .center) {
-            ForEach(categories, id: \.self) { category in
-                Text(category)
+            ForEach(tags, id: \.self) { tag in
+                Text(tag)
                     .padding(5)
                     .background { Color("appYellow") }
                     .clipShape(RoundedRectangle(cornerRadius: 15))
