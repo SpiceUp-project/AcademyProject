@@ -6,63 +6,91 @@
 //
 
 import SwiftUI
-struct GrowingButton: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View { configuration.label
-            .padding(20)
-            .padding(.horizontal, 30)
-            .background(.gray)
-            .foregroundColor(.white)
-            .clipShape(Rectangle())
-            .cornerRadius(10)
-            .scaleEffect(configuration.isPressed ? 1.2 : 1)
-            .animation(.easeOut(duration:0.2), value: configuration.isPressed)
-        
-    }
-}
 
 struct ModalView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        VStack {
+        ZStack {
             Color.white
                 .ignoresSafeArea()
             
-            Text("Take a cup of coffee with a stranger")
-                .font(.title)
-                .multilineTextAlignment(.leading)
-                .offset(y: 6)
-                .padding(.bottom, 650)
-            //.frame()
-            
-            HStack {
-                Button("Dismiss") {
-                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-
+            VStack {
+                VStack {
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                        
+                    }
+                label: {
+                    Image(systemName: "x.circle")
+                        .foregroundColor(.black)
+                        .font(.title)
                 }
-                .buttonStyle(GrowingButton())
-                
-                Button("Done  ") {
-                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-                }
-                .buttonStyle(GrowingButton())
-                
+                .padding()
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                    Spacer()
+                    
+                    ScrollView {
+                        Text("Take a cup of coffee with a stranger" + "\n")
+                            .font(.title)
+                            .multilineTextAlignment(.leading)
 
+                        
+                        HStack {
+                            Image(systemName: "medal")
+                                .foregroundColor(.black)
+                                .font(.headline)
+                            }
+                        
+                        
+                    }
+                    .padding(.bottom, 150)
+                    
+                    HStack {
+                        Button {
+                            print("Edit button was tapped")
+                        } label: {
+                            Text("Dismiss          ")
+                                .font(.title3)
+                                .padding()
+                                .foregroundColor(.black)
+                                .background(Color(.gray))
+                                .cornerRadius(18)
+                                .shadow(color: .gray, radius: 5, x: 0, y: 2)
+                            
+                        }
+                        
+                        Button {
+                            print("Edit button was tapped")
+                        } label: {
+                            Text("Done               ")
+                                .font(.title3)
+                                .padding()
+                                .foregroundColor(.black)
+                                .background(Color("appYellow"))
+                                .cornerRadius(18)
+                                .shadow(color: .gray, radius: 5, x: 0, y: 2)
+                            
+                        }
+                        
+                        
+                    }
+                    
+                    
+                    
+                }
+                
             }
-            
-            
-            
         }
-        
-        
     }
-}
-
-
-
-struct ModalView_Previews: PreviewProvider {
-    static var previews: some View {
-        ModalView()
+    
+    
+    
+    struct ModalView_Previews: PreviewProvider {
+        static var previews: some View {
+            ModalView()
+        }
     }
+    
 }
