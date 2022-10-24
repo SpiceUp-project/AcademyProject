@@ -11,8 +11,8 @@ import SwiftUI
      @State private var translation: CGSize = .zero
      @State private var swipeStatus: LikeDislike = .none
 
-     private var user: User
-     private var onRemove: (_ user: User) -> Void
+     private var challenge: Challenge
+     private var onRemove: (_ challenge: Challenge) -> Void
 
      private var thresholdPercentage: CGFloat = 0.5 // when the user has draged 50% the width of the screen in either direction
      
@@ -20,8 +20,8 @@ import SwiftUI
          case like, dislike, none
      }
 
-     init(user: User, onRemove: @escaping (_ user: User) -> Void) {
-         self.user = user
+     init(challenge: Challenge, onRemove: @escaping (_ challenge: Challenge) -> Void) {
+         self.challenge = challenge
          self.onRemove = onRemove
      }
 
@@ -37,7 +37,7 @@ import SwiftUI
          GeometryReader { geometry in
              VStack(alignment: .leading) {
                   ZStack(alignment: self.swipeStatus == .like ? .topLeading : .topTrailing) {
-                     Image(self.user.imageName)
+                     Image(self.challenge.imageName)
                          .resizable()
                          .aspectRatio(contentMode: .fill)
                          .frame(width: geometry.size.width, height: geometry.size.height * 0.75)
@@ -70,13 +70,13 @@ import SwiftUI
 
                  HStack {
                      VStack(alignment: .leading, spacing: 6) {
-                         Text("\(self.user.challengeName)")
+                         Text("\(self.challenge.challengeName)")
                              .font(.title)
                              .bold()
-                         Text(self.user.tags)
+                         Text(self.challenge.tags)
                              .font(.subheadline)
                              .bold()
-                         Text("Earn \(self.user.points) points")
+                         Text("Earn \(self.challenge.points) points")
                              .font(.subheadline)
                              .foregroundColor(.gray)
                      }
@@ -109,7 +109,7 @@ import SwiftUI
                  }.onEnded { value in
                      // determine snap distance > 0.5 aka half the width of the screen
                          if abs(self.getGesturePercentage(geometry, from: value)) > self.thresholdPercentage {
-                             self.onRemove(self.user)
+                             self.onRemove(self.challenge)
                          } else {
                              self.translation = .zero
                          }
@@ -122,7 +122,7 @@ import SwiftUI
  // 7
  struct CardView_Previews: PreviewProvider {
      static var previews: some View {
-         CardView(user: User(id: 0, challengeName: "Cindy", points: 23, currentlyTaking: 4, imageName: "person_1", tags: "Coach"),
+         CardView(challenge: Challenge(id: 0, challengeName: "Cindy", points: 23, currentlyTaking: 4, imageName: "person_1", tags: "Coach"),
                   onRemove: { _ in
                      // do nothing
              })
