@@ -10,7 +10,7 @@ import SwiftUI
  struct CardView: View {
      @State private var translation: CGSize = .zero
      @State private var swipeStatus: LikeDislike = .none
-     @State var tags = ["Calm", "Communication", "Cheap", "Stranger"]
+//     @State var tags = self.challenge.tags
 
      private var challenge: Challenge
      private var onRemove: (_ challenge: Challenge) -> Void
@@ -74,7 +74,17 @@ import SwiftUI
                          Text("\(self.challenge.challengeName)")
                              .font(.title)
                              .bold()
-                         categoryPills
+                         ScrollView(.horizontal) {
+                             HStack(alignment: .center) {
+                                 ForEach(self.challenge.tags, id: \.self) { tag in
+                                     Text(tag)
+                                         .padding(5)
+                                         .background { Color("appYellow") }
+                                         .clipShape(RoundedRectangle(cornerRadius: 15))
+                                     
+                                 }
+                             }
+                         }
 //                         Text(self.challenge.tags)
 //                             .font(.subheadline)
 //                             .bold()
@@ -121,19 +131,19 @@ import SwiftUI
      }
  }
 
-var categoryPills: some View {
-    ScrollView(.horizontal) {
-        HStack(alignment: .center) {
-            ForEach(tags, id: \.self) { tag in
-                Text(tag)
-                    .padding(5)
-                    .background { Color("appYellow") }
-                    .clipShape(RoundedRectangle(cornerRadius: 15))
-                
-            }
-        }
-    }
-}
+//var categoryPills: some View {
+//    ScrollView(.horizontal) {
+//        HStack(alignment: .center) {
+//            ForEach(tags, id: \.self) { tag in
+//                Text(tag)
+//                    .padding(5)
+//                    .background { Color("appYellow") }
+//                    .clipShape(RoundedRectangle(cornerRadius: 15))
+//
+//            }
+//        }
+//    }
+//}
 
  // 7
  struct CardView_Previews: PreviewProvider {
