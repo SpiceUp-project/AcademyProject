@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ModalView: View {
     
-    
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -33,29 +32,36 @@ struct ModalView: View {
                     Spacer()
                     
                     ScrollView {
-                        Text("Take a cup of coffee with a stranger" + "\n")
-                            .font(.title)
-                            .multilineTextAlignment(.leading)
+                        VStack{  Text("Take a cup of coffee with a stranger")
+                                .font(.title)
+                                .multilineTextAlignment(.leading)
+                                .padding(.bottom, 10)
+                            
+                           Image(systemName: "medal")
+                                .padding(.leading, -150)
+                            
+                            
+                            
+                            Spacer()
+                                .frame(height: 15)
+                            
+                                Text("Description")
+                                    .font(.headline)
+                                    .padding(.leading, -150)
+                         
+                            Spacer()
+                                .frame(height: 5)
+                            
+                                Text("Lorem Ipsum bla bla bla bla")
+                                    .font(.caption)
+                                    .padding(.leading, -145)
+                      
+                            
+                            
+                        }
                         
-                        VStack(alignment: .leading){
-                            Text("Description")
-                                .font(.headline)
+                        
                     }
-                        .padding(.leading, -150)
-                        
-                        VStack(alignment: .leading){
-                            Text("Lorem Ipsum bla bla bla bla")
-                                .font(.caption)
-                                .padding([.bottom, .trailing])
-                                
-                    }
-                        .padding(.leading, -150)
-                        
-                        
-                    }
-                    
-
-                    
                 }
                 .padding(.bottom, 150)
                 

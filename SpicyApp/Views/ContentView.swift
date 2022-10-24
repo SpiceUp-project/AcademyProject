@@ -74,6 +74,7 @@ import SwiftUI
                          .foregroundColor(.black)
                          .sheet(isPresented: $showView) {
                              ModalView()
+                             
                          }
                      }
                  }
