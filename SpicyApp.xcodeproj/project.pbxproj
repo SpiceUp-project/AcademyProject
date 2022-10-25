@@ -19,6 +19,8 @@
 		4FB5C70A28FD7087003AA55E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FB5C70928FD7087003AA55E /* Assets.xcassets */; };
 		4FB5C70D28FD7087003AA55E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FB5C70C28FD7087003AA55E /* Preview Assets.xcassets */; };
 		4FB5C73028FD729F003AA55E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5C72F28FD729F003AA55E /* CardView.swift */; };
+		D50A043E2907379B002606DE /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50A043D2907379B002606DE /* Color+Extension.swift */; };
+		D5ACE30629042A7100756F7A /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACE30529042A7100756F7A /* ChallengeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,7 @@
 		4FB5C71228FD7087003AA55E /* SpicyAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpicyAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FB5C71C28FD7087003AA55E /* SpicyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpicyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FB5C72F28FD729F003AA55E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		D50A043D2907379B002606DE /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		D5ACE30529042A7100756F7A /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +112,7 @@
 		4FB5C6F928FD7086003AA55E = {
 			isa = PBXGroup;
 			children = (
+				D50A043D2907379B002606DE /* Color+Extension.swift */,
 				4FB5C70428FD7086003AA55E /* SpicyApp */,
 				4FB5C70328FD7086003AA55E /* Products */,
 			);
@@ -277,6 +281,7 @@
 				1329397D29042C1300E5AAAC /* DateView.swift in Sources */,
 				4FB5C70828FD7086003AA55E /* ContentView.swift in Sources */,
 				13BFB56929070E36008BA3B5 /* OneMoreView.swift in Sources */,
+				D50A043E2907379B002606DE /* Color+Extension.swift in Sources */,
 				4FB5C73028FD729F003AA55E /* CardView.swift in Sources */,
 				1329398329046A7A00E5AAAC /* MainNavigationView.swift in Sources */,
 				4F85556029002DAE00786E46 /* ModalView.swift in Sources */,

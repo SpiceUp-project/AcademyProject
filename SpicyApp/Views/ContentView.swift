@@ -8,19 +8,33 @@
 import SwiftUI
 
 
+let screenWidth = UIScreen.main.bounds.size.width
+let screenHeight = UIScreen.main.bounds.size.height
+
+func universalHeight(height: CGFloat) -> CGFloat {
+    (screenHeight / 844) * height
+}
+
+func universalWidth(width: CGFloat) -> CGFloat {
+    (screenWidth / 390) * width
+}
+
  struct ContentView: View {
      @State var showView = false //for the modal sheet/Users/viacheslav/Developer/AcademyProject/SpicyApp/Views/ContentView.swift
      /// List of challenges
-
+     ///
      @State var shuffledChallenges: [Challenge] = challenges.shuffled()
+
+
 
      /// Return the CardViews width for the given offset in the array
      /// - Parameters:
      ///   - geometry: The geometry proxy of the parent
      ///   - id: The ID of the current user
      private func getCardWidth(_ geometry: GeometryProxy, id: Int) -> CGFloat {
-         let offset: CGFloat = CGFloat(challenges.count - 1 - id) * 10
-         return geometry.size.width - offset
+         let offset2 = 30 - id * 10
+         
+         return geometry.size.width - CGFloat(offset2)
      }
 
      /// Return the CardViews frame offset for the given offset in the array
@@ -28,7 +42,7 @@ import SwiftUI
      ///   - geometry: The geometry proxy of the parent
      ///   - id: The ID of the current user
      private func getCardOffset(_ geometry: GeometryProxy, id: Int) -> CGFloat {
-         return  CGFloat(challenges.count - 1 - id) * 10
+         return  CGFloat(-id * 10)
      }
 
      private var maxID: Int {
@@ -53,18 +67,26 @@ import SwiftUI
                              showView.toggle()
                          } label: {
                              ZStack {
+                                 
                                  ForEach(self.shuffledChallenges, id: \.self) { challenge in
                                      Group {
                                          // Range Operator
-                                         if (self.maxID - 3)...self.maxID ~= challenge.id {
-                                             CardView(challenge: challenge, onRemove: { removedChallenge in
-                                                 // Remove that user from our array
-                                                 self.shuffledChallenges.removeAll { $0.id == removedChallenge.id
-                                                 }
-                                             })
-//                                             .animation(.spring())
-                                             .frame(width: self.getCardWidth(geometry, id: challenge.id), height: 400)
-                                             .offset(x: 0, y: self.getCardOffset(geometry, id: challenge.id))
+                                         if let id = self.shuffledChallenges.firstIndex(of: challenge) {
+                                             
+                                             
+                                             //                                         if (self.maxID - 3)...self.maxID ~= challenge.id {
+                                             if id < 4 {
+                                                 CardView(challenge: challenge, onRemove: { removedChallenge in
+                                                     // Remove that user from our array
+                                                     self.shuffledChallenges.removeAll { $0.id == removedChallenge.id
+                                                     }
+                                                     self.shuffledChallenges.append(challenge)
+                                                 })
+                                                 //                                             .animation(.spring())
+                                                 .frame(width: self.getCardWidth(geometry, id: id), height: universalHeight(height: 400.0))
+                                                 .offset(x: 0, y: self.getCardOffset(geometry, id: id + 1))
+                                                 .padding(.top, 40)
+                                             }
                                          }
                                      }
                                  }
