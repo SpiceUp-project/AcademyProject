@@ -26,7 +26,7 @@ struct MainNavigationView: View {
                 }
         }
     }
-    }
+}
 
 
 struct MainNavigationView_Previews: PreviewProvider {
