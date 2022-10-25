@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//This makes size of elements sensible with size of screen (down)
 
 let screenWidth = UIScreen.main.bounds.size.width
 let screenHeight = UIScreen.main.bounds.size.height
@@ -19,13 +20,16 @@ func universalWidth(width: CGFloat) -> CGFloat {
     (screenWidth / 390) * width
 }
 
+//This makes size of elements sensible with size of screen (up)
+
  struct ContentView: View {
      @State var showView = false //for the modal sheet/Users/viacheslav/Developer/AcademyProject/SpicyApp/Views/ContentView.swift
      /// List of challenges
      ///
      @State var shuffledChallenges: [Challenge] = challenges.shuffled()
-
-
+     
+     
+     let randomChallenge = challenges.randomElement()
 
      /// Return the CardViews width for the given offset in the array
      /// - Parameters:
@@ -60,21 +64,18 @@ func universalWidth(width: CGFloat) -> CGFloat {
                      .clipShape(Circle())
                      .offset(x: -geometry.size.width / 4, y: -geometry.size.height / 2)
 
-                 VStack(spacing: 24) {
-
-                         DateView()
+                VStack(spacing: 24) {
+                    DateView()
                          Button {
                              showView.toggle()
                          } label: {
                              ZStack {
-                                 
+
                                  ForEach(self.shuffledChallenges, id: \.self) { challenge in
                                      Group {
                                          // Range Operator
                                          if let id = self.shuffledChallenges.firstIndex(of: challenge) {
-                                             
-                                             
-                                             //                                         if (self.maxID - 3)...self.maxID ~= challenge.id {
+                                             // if (self.maxID - 3)...self.maxID ~= challenge.id {
                                              if id < 4 {
                                                  CardView(challenge: challenge, onRemove: { removedChallenge in
                                                      // Remove that user from our array
@@ -82,7 +83,7 @@ func universalWidth(width: CGFloat) -> CGFloat {
                                                      }
                                                      self.shuffledChallenges.append(challenge)
                                                  })
-                                                 //                                             .animation(.spring())
+//                                                 .animation(.spring())
                                                  .frame(width: self.getCardWidth(geometry, id: id), height: universalHeight(height: 400.0))
                                                  .offset(x: 0, y: self.getCardOffset(geometry, id: id + 1))
                                                  .padding(.top, 40)
@@ -95,28 +96,28 @@ func universalWidth(width: CGFloat) -> CGFloat {
                          }
                          .foregroundColor(.black)
                          .sheet(isPresented: $showView) {
-                             ModalView()
+                             ModalView(challenge: shuffledChallenges[3])
+                             
                          }
                      }
                  }
-                 
-
-                 Button {
-                     print("Edit button was tapped")
-                 } label: {
-                     Label("Get random challenge", systemImage: "dice.fill")
-                         .font(.title2)
-                         .frame(width: 330)
-                         .padding()
-//                         .frame(width: .size.width)
-                         .foregroundColor(.black)
-                         .background(Color("appYellow"))
-                         .cornerRadius(10)
-                         .shadow(color: .gray, radius: 5, x: 0, y: 2)
-                 }
+//                 Button {
+//                     print("Edit button was tapped")
+//                 } label: {
+//                     Label("Get random challenge", systemImage: "dice.fill")
+//                         .font(.title2)
+//                         .frame(width: 330)
+//                         .padding()
+////                         .frame(width: .size.width)
+//                         .foregroundColor(.black)
+//                         .background(Color("appYellow"))
+//                         .cornerRadius(10)
+//                         .shadow(color: .gray, radius: 5, x: 0, y: 2)
+//                 }
              }.padding()
          }
-     }
+     
+ }
 
  struct ContentView_Previews: PreviewProvider {
      static var previews: some View {

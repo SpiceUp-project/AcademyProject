@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+//Challenges Structure
+
 struct Challenge: Hashable, CustomStringConvertible {
     var id: Int
 
@@ -21,6 +23,8 @@ struct Challenge: Hashable, CustomStringConvertible {
         return "\(challengeName), id: \(id)"
     }
 }
+
+//Challenges Data Base
 
 var challenges: [Challenge] = [
    Challenge(id: 0, challengeName: "Coffee with a stranger", points: 250, currentlyTaking: 4, imageName: "coffee1", tags: ["Cheap", "Social", "Surroundings"]),
