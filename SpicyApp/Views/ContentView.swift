@@ -101,7 +101,6 @@ func universalWidth(width: CGFloat) -> CGFloat {
                  }
                  
 
-                 Spacer()
                  Button {
                      print("Edit button was tapped")
                  } label: {
