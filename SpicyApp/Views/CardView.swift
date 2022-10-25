@@ -115,7 +115,8 @@ import SwiftUI
                              self.swipeStatus = .none
                          }
 
-                 }.onEnded { value in
+                 }
+                    .onEnded { value in
                      // determine snap distance > 0.5 aka half the width of the screen
                          if abs(self.getGesturePercentage(geometry, from: value)) > self.thresholdPercentage {
                              self.onRemove(self.challenge)

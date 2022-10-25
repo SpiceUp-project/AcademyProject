@@ -9,6 +9,12 @@ import SwiftUI
 
 struct ModalView: View {
     
+    let challenge: Challenge
+    
+    init(challenge: Challenge) {
+        self.challenge = challenge
+    }
+    
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -32,82 +38,65 @@ struct ModalView: View {
                     Spacer()
                     
                     ScrollView {
-                        VStack{  Text("Take a cup of coffee with a stranger")
-                                .font(.title)
-                                .multilineTextAlignment(.leading)
-                                .padding(.bottom, 10)
+                        Text(challenge.challengeName)
+                            .font(.title)
+                            .multilineTextAlignment(.leading)
+
+                        
+                        HStack {
+                            Image(systemName: "medal")
+                                .foregroundColor(.black)
+                                .font(.headline)
+                            }
+                        
+                        
+                    }
+                    .padding(.bottom, 150)
+                    
+                    HStack {
+                        Button {
+                            print("Edit button was tapped")
+                        } label: {
+                            Text("Dismiss          ")
+                                .font(.title3)
+                                .padding()
+                                .foregroundColor(.black)
+                                .background(Color(.gray))
+                                .cornerRadius(18)
+                                .shadow(color: .gray, radius: 5, x: 0, y: 2)
                             
-                           Image(systemName: "medal")
-                                .padding(.leading, -150)
-                            
-                            
-                            
-                            Spacer()
-                                .frame(height: 15)
-                            
-                                Text("Description")
-                                    .font(.headline)
-                                    .padding(.leading, -150)
-                         
-                            Spacer()
-                                .frame(height: 5)
-                            
-                                Text("Lorem Ipsum bla bla bla bla")
-                                    .font(.caption)
-                                    .padding(.leading, -145)
-                      
-                            
+                        }
+                        
+                        Button {
+                            print("Edit button was tapped")
+                        } label: {
+                            Text("Done               ")
+                                .font(.title3)
+                                .padding()
+                                .foregroundColor(.black)
+                                .background(Color("appYellow"))
+                                .cornerRadius(18)
+                                .shadow(color: .gray, radius: 5, x: 0, y: 2)
                             
                         }
                         
                         
                     }
-                }
-                .padding(.bottom, 150)
-                
-                HStack {
-                    Button {
-                        print("Edit button was tapped")
-                    } label: {
-                        Text("Dismiss          ")
-                            .font(.title3)
-                            .padding()
-                            .foregroundColor(.black)
-                            .background(Color(.gray))
-                            .cornerRadius(18)
-                            .shadow(color: .gray, radius: 5, x: 0, y: 2)
-                        
-                    }
                     
-                    Button {
-                        print("Edit button was tapped")
-                    } label: {
-                        Text("Done               ")
-                            .font(.title3)
-                            .padding()
-                            .foregroundColor(.black)
-                            .background(Color("appYellow"))
-                            .cornerRadius(18)
-                            .shadow(color: .gray, radius: 5, x: 0, y: 2)
-                        
-                    }
                     
                     
                 }
-                
                 
             }
-            
         }
     }
-}
-
-
-
-struct ModalView_Previews: PreviewProvider {
-    static var previews: some View {
-        ModalView()
+    
+    
+    
+    struct ModalView_Previews: PreviewProvider {
+        static var previews: some View {
+            ModalView(challenge: challenges[3])
+        }
     }
+    
 }
-
-
