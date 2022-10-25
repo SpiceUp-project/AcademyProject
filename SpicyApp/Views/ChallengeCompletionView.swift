@@ -14,19 +14,21 @@ struct ChallengeCompletionView: View {
             Spacer()
             
             Image("completionHeart")
-                .resizable(capInsets: EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0))
+                .resizable()
                 .aspectRatio(contentMode: .fit)
             
             
             Text("Done!")
-                .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
-                .fontWeight(.heavy)
+                .font(.custom("SFProDisplay", fixedSize: 64))
+                .fontWeight(.bold)
                 .padding(.bottom, 10)
             
-            Text("Congratulation! You spiced up your day!")
-                .font(.body)
-                .fontWeight(.regular)
-
+            HStack{
+                Text("Congratulation! You spiced up your day!")
+                    .font(.custom("SFProText", fixedSize: 19))
+                    .fontWeight(.regular)
+            }
+            .frame(width: 170)
             
             Spacer()
             
