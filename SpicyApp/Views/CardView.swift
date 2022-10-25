@@ -131,7 +131,7 @@ import SwiftUI
 
  struct CardView_Previews: PreviewProvider {
      static var previews: some View {
-         CardView(challenge: Challenge(id: 0, challengeName: "Challenge name", points: 23, currentlyTaking: 4, imageName: "shelter", tags: ["Tag 1", "Tag 2", "Tag 3", "Tag long long"]),
+         CardView(challenge: Challenge(id: 0, challengeName: "Challenge name", points: 23, currentlyTaking: 4, imageName: "shelter", tags: ["Tag 1", "Tag 2", "Tag 3", "Tag long long"], Description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum"),
                   onRemove: { _ in
                      // do nothing
              })
