@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ChallengeView: View {
-    @State var challenge = "Take a cup of coffee with a stranger"
+    
+    private var challenge: Challenge
+//    @State var challenge = "Take a cup of coffee with a stranger"
     @State var timerCount: TimeInterval = 86000
-    @State var categories = ["Calm", "Communication", "Cheap", "Stranger"]
+//    @State var categories = ["Calm", "Communication", "Cheap", "Stranger"]
     
     var body: some View {
         VStack {
@@ -84,13 +86,9 @@ struct ChallengeView: View {
                 .shadow(radius: 5, x: 0, y: 2)
             }
             .padding()
-            
-     
         }
-
-            }
-
-        }
+    }
+}
 
 
 
@@ -100,21 +98,6 @@ private extension ChallengeView {
         let hour = Int(seconds / 3600)
         let minutes = Int(seconds / 60) % 60
         return String(format: "%02d:%02d", hour, minutes)
-    }
-    
-    var header: some View {
-        HStack{
-            Text("Today's challenge")
-                .font(.title)
-            Spacer()
-            Circle.init()
-                .frame(width: 30)
-                .foregroundColor(.green)
-            
-            
-            
-        }
-        .padding()
     }
     
     var timer: some View {
@@ -144,6 +127,7 @@ private extension ChallengeView {
     }
 
     }
+}
     
     struct ChallengeView_Previews: PreviewProvider {
         static var previews: some View {

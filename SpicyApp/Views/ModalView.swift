@@ -12,42 +12,85 @@ struct ModalView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        
         ZStack {
-            
-            Color.orange
+            Color.white
                 .ignoresSafeArea()
             
             VStack {
-                Button {
-                    presentationMode.wrappedValue.dismiss()
-                    
-                } label: {
+                VStack {
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                        
+                    }
+                label: {
                     Image(systemName: "x.circle")
                         .foregroundColor(.black)
-                        .font(.largeTitle)
+                        .font(.title)
                 }
                 .padding()
                 .frame(maxWidth: .infinity, alignment: .trailing)
-                Spacer()
+                    Spacer()
+                    
+                    ScrollView {
+                        Text("Take a cup of coffee with a stranger" + "\n")
+                            .font(.title)
+                            .multilineTextAlignment(.leading)
+
+                        
+                        HStack {
+                            Image(systemName: "medal")
+                                .foregroundColor(.black)
+                                .font(.headline)
+                            }
+                        
+                        
+                    }
+                    .padding(.bottom, 150)
+                    
+                    HStack {
+                        Button {
+                            print("Edit button was tapped")
+                        } label: {
+                            Text("Dismiss          ")
+                                .font(.title3)
+                                .padding()
+                                .foregroundColor(.black)
+                                .background(Color(.gray))
+                                .cornerRadius(18)
+                                .shadow(color: .gray, radius: 5, x: 0, y: 2)
+                            
+                        }
+                        
+                        Button {
+                            print("Edit button was tapped")
+                        } label: {
+                            Text("Done               ")
+                                .font(.title3)
+                                .padding()
+                                .foregroundColor(.black)
+                                .background(Color("appYellow"))
+                                .cornerRadius(18)
+                                .shadow(color: .gray, radius: 5, x: 0, y: 2)
+                            
+                        }
+                        
+                        
+                    }
+                    
+                    
+                    
+                }
+                
             }
-            VStack {
-        ScrollView {
-            Text("This is the second one")
-                .font(.title2.weight(.heavy))
-        }
-        
-        ScrollView(.horizontal) {
-            Text("hello dsjfdfsdgodgjsdogjncncjcjdfjgjgjkbkbkbkbkbk")
         }
     }
+    
+    
+    
+    struct ModalView_Previews: PreviewProvider {
+        static var previews: some View {
+            ModalView()
         }
     }
-}
-
-
-struct ModalView_Previews: PreviewProvider {
-    static var previews: some View {
-        ModalView()
-    }
+    
 }

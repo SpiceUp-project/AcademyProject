@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1329397D29042C1300E5AAAC /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1329397C29042C1300E5AAAC /* DateView.swift */; };
+		1329398129043BAB00E5AAAC /* Challenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1329398029043BAB00E5AAAC /* Challenges.swift */; };
+		1329398329046A7A00E5AAAC /* MainNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1329398229046A7A00E5AAAC /* MainNavigationView.swift */; };
+		132939872904843C00E5AAAC /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132939862904843C00E5AAAC /* TestView.swift */; };
+		13BFB56929070E36008BA3B5 /* OneMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFB56829070E36008BA3B5 /* OneMoreView.swift */; };
 		4F85556029002DAE00786E46 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F85555F29002DAE00786E46 /* ModalView.swift */; };
 		4FA9A63F29015349001A2931 /* SpicyTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA9A63E29015349001A2931 /* SpicyTabView.swift */; };
 		4FB5C70628FD7086003AA55E /* SpicyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5C70528FD7086003AA55E /* SpicyAppApp.swift */; };
 		4FB5C70828FD7086003AA55E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5C70728FD7086003AA55E /* ContentView.swift */; };
 		4FB5C70A28FD7087003AA55E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FB5C70928FD7087003AA55E /* Assets.xcassets */; };
 		4FB5C70D28FD7087003AA55E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FB5C70C28FD7087003AA55E /* Preview Assets.xcassets */; };
-		4FB5C71728FD7087003AA55E /* SpicyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5C71628FD7087003AA55E /* SpicyAppTests.swift */; };
-		4FB5C72128FD7087003AA55E /* SpicyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5C72028FD7087003AA55E /* SpicyAppUITests.swift */; };
-		4FB5C72328FD7087003AA55E /* SpicyAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5C72228FD7087003AA55E /* SpicyAppUITestsLaunchTests.swift */; };
 		4FB5C73028FD729F003AA55E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5C72F28FD729F003AA55E /* CardView.swift */; };
 		D50A043E2907379B002606DE /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50A043D2907379B002606DE /* Color+Extension.swift */; };
 		D5ACE30629042A7100756F7A /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACE30529042A7100756F7A /* ChallengeView.swift */; };
@@ -39,6 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1329397C29042C1300E5AAAC /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
+		1329398029043BAB00E5AAAC /* Challenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Challenges.swift; path = SpicyApp/Views/Challenges.swift; sourceTree = SOURCE_ROOT; };
+		1329398229046A7A00E5AAAC /* MainNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationView.swift; sourceTree = "<group>"; };
+		132939862904843C00E5AAAC /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		13BFB56829070E36008BA3B5 /* OneMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneMoreView.swift; sourceTree = "<group>"; };
 		4F85555F29002DAE00786E46 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		4FA9A63E29015349001A2931 /* SpicyTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpicyTabView.swift; sourceTree = "<group>"; };
 		4FB5C70228FD7086003AA55E /* SpicyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpicyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,10 +54,7 @@
 		4FB5C70928FD7087003AA55E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FB5C70C28FD7087003AA55E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4FB5C71228FD7087003AA55E /* SpicyAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpicyAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4FB5C71628FD7087003AA55E /* SpicyAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpicyAppTests.swift; sourceTree = "<group>"; };
 		4FB5C71C28FD7087003AA55E /* SpicyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpicyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4FB5C72028FD7087003AA55E /* SpicyAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpicyAppUITests.swift; sourceTree = "<group>"; };
-		4FB5C72228FD7087003AA55E /* SpicyAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpicyAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4FB5C72F28FD729F003AA55E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		D50A043D2907379B002606DE /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		D5ACE30529042A7100756F7A /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
@@ -87,8 +91,12 @@
 				4FB5C70728FD7086003AA55E /* ContentView.swift */,
 				4FB5C72F28FD729F003AA55E /* CardView.swift */,
 				4F85555F29002DAE00786E46 /* ModalView.swift */,
-				4FA9A63E29015349001A2931 /* SpicyTabView.swift */,
+				1329397C29042C1300E5AAAC /* DateView.swift */,
 				D5ACE30529042A7100756F7A /* ChallengeView.swift */,
+				1329398229046A7A00E5AAAC /* MainNavigationView.swift */,
+				132939862904843C00E5AAAC /* TestView.swift */,
+				4FA9A63E29015349001A2931 /* SpicyTabView.swift */,
+				13BFB56829070E36008BA3B5 /* OneMoreView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -96,6 +104,7 @@
 		4FA9A63529013839001A2931 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1329398029043BAB00E5AAAC /* Challenges.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -105,8 +114,6 @@
 			children = (
 				D50A043D2907379B002606DE /* Color+Extension.swift */,
 				4FB5C70428FD7086003AA55E /* SpicyApp */,
-				4FB5C71528FD7087003AA55E /* SpicyAppTests */,
-				4FB5C71F28FD7087003AA55E /* SpicyAppUITests */,
 				4FB5C70328FD7086003AA55E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -139,23 +146,6 @@
 				4FB5C70C28FD7087003AA55E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		4FB5C71528FD7087003AA55E /* SpicyAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				4FB5C71628FD7087003AA55E /* SpicyAppTests.swift */,
-			);
-			path = SpicyAppTests;
-			sourceTree = "<group>";
-		};
-		4FB5C71F28FD7087003AA55E /* SpicyAppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				4FB5C72028FD7087003AA55E /* SpicyAppUITests.swift */,
-				4FB5C72228FD7087003AA55E /* SpicyAppUITestsLaunchTests.swift */,
-			);
-			path = SpicyAppUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,12 +278,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1329397D29042C1300E5AAAC /* DateView.swift in Sources */,
 				4FB5C70828FD7086003AA55E /* ContentView.swift in Sources */,
 				D50A043E2907379B002606DE /* Color+Extension.swift in Sources */,
+				13BFB56929070E36008BA3B5 /* OneMoreView.swift in Sources */,
 				4FB5C73028FD729F003AA55E /* CardView.swift in Sources */,
-				D5ACE30629042A7100756F7A /* ChallengeView.swift in Sources */,
+				1329398329046A7A00E5AAAC /* MainNavigationView.swift in Sources */,
 				4F85556029002DAE00786E46 /* ModalView.swift in Sources */,
 				4FB5C70628FD7086003AA55E /* SpicyAppApp.swift in Sources */,
+				132939872904843C00E5AAAC /* TestView.swift in Sources */,
+				1329398129043BAB00E5AAAC /* Challenges.swift in Sources */,
 				4FA9A63F29015349001A2931 /* SpicyTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,7 +296,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FB5C71728FD7087003AA55E /* SpicyAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,8 +303,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FB5C72328FD7087003AA55E /* SpicyAppUITestsLaunchTests.swift in Sources */,
-				4FB5C72128FD7087003AA55E /* SpicyAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
