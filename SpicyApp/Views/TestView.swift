@@ -37,6 +37,6 @@ struct TestView: View {
 
 struct TestView_Previews: PreviewProvider {
     static var previews: some View {
-            TestView(challenge: Challenge(id: 0, challengeName: "Some name", points: 23, currentlyTaking: 4, imageName: "shelter", tags: ["Tag 1", "Tag 2", "Tag 3", "Tag long long"]))
+        TestView(challenge: Challenge(id: 0, challengeName: "Some name", points: 23, currentlyTaking: 4, imageName: "shelter", tags: ["Tag 1", "Tag 2", "Tag 3", "Tag long long"], Description: ""))
     }
 }
