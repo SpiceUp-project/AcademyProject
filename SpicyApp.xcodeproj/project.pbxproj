@@ -12,6 +12,7 @@
 		1329398329046A7A00E5AAAC /* MainNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1329398229046A7A00E5AAAC /* MainNavigationView.swift */; };
 		132939872904843C00E5AAAC /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132939862904843C00E5AAAC /* TestView.swift */; };
 		13BFB56929070E36008BA3B5 /* OneMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFB56829070E36008BA3B5 /* OneMoreView.swift */; };
+		457DC4062907F0C3006E0B2F /* ChallengeCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457DC4052907F0C3006E0B2F /* ChallengeCompletionView.swift */; };
 		4F85556029002DAE00786E46 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F85555F29002DAE00786E46 /* ModalView.swift */; };
 		4FA9A63F29015349001A2931 /* SpicyTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA9A63E29015349001A2931 /* SpicyTabView.swift */; };
 		4FB5C70628FD7086003AA55E /* SpicyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5C70528FD7086003AA55E /* SpicyAppApp.swift */; };
@@ -20,7 +21,6 @@
 		4FB5C70D28FD7087003AA55E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FB5C70C28FD7087003AA55E /* Preview Assets.xcassets */; };
 		4FB5C73028FD729F003AA55E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5C72F28FD729F003AA55E /* CardView.swift */; };
 		D50A043E2907379B002606DE /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50A043D2907379B002606DE /* Color+Extension.swift */; };
-		D5ACE30629042A7100756F7A /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACE30529042A7100756F7A /* ChallengeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +46,7 @@
 		1329398229046A7A00E5AAAC /* MainNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationView.swift; sourceTree = "<group>"; };
 		132939862904843C00E5AAAC /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		13BFB56829070E36008BA3B5 /* OneMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneMoreView.swift; sourceTree = "<group>"; };
+		457DC4052907F0C3006E0B2F /* ChallengeCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCompletionView.swift; sourceTree = "<group>"; };
 		4F85555F29002DAE00786E46 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		4FA9A63E29015349001A2931 /* SpicyTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpicyTabView.swift; sourceTree = "<group>"; };
 		4FB5C70228FD7086003AA55E /* SpicyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpicyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +98,7 @@
 				132939862904843C00E5AAAC /* TestView.swift */,
 				4FA9A63E29015349001A2931 /* SpicyTabView.swift */,
 				13BFB56829070E36008BA3B5 /* OneMoreView.swift */,
+				457DC4052907F0C3006E0B2F /* ChallengeCompletionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -282,6 +284,7 @@
 				4FB5C70828FD7086003AA55E /* ContentView.swift in Sources */,
 				13BFB56929070E36008BA3B5 /* OneMoreView.swift in Sources */,
 				D50A043E2907379B002606DE /* Color+Extension.swift in Sources */,
+				457DC4062907F0C3006E0B2F /* ChallengeCompletionView.swift in Sources */,
 				4FB5C73028FD729F003AA55E /* CardView.swift in Sources */,
 				1329398329046A7A00E5AAAC /* MainNavigationView.swift in Sources */,
 				4F85556029002DAE00786E46 /* ModalView.swift in Sources */,
