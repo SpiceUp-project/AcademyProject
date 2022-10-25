@@ -7,60 +7,84 @@
 
 import SwiftUI
 
-struct ChallengeView: View {
-    private var challenge: Challenge
-    @State private var timerCount: TimeInterval = 0
+// Model
+// Controller
+// View
+
+final class ChallengeStore: ObservableObject {
+    @Published var challenge: Challenge
+    @Published var timerLabel: String = "00:00"
     
     init(challenge: Challenge) {
         self.challenge = challenge
-        
-        startTimer()
+    }
+    
+    func start() {
+        challenge.startChallenge()
+        updateTimer()
+    }
+    
+    func updateTimer() {
+        Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { timer in
+            self.updateLabel()
+        }
+        self.updateLabel()
+    }
+    
+    func updateLabel() {
+        let oneDayTimeInterval: TimeInterval = 86400
+        let timeElapsedSinceChallengeStart = (challenge.startDate?.timeIntervalSinceNow ?? oneDayTimeInterval) * -1
+        let remainingChallengeTime = max(oneDayTimeInterval - timeElapsedSinceChallengeStart, 0)
+        timerLabel = convertSecondsToTimeLabel(remainingChallengeTime)
+    }
+    
+    private func convertSecondsToTimeLabel(_ seconds: TimeInterval) -> String {
+        let hour = Int(seconds / 3600)
+        let minutes = Int(seconds / 60) % 60
+        return String(format: "%02d:%02d", hour, minutes)
+    }
+}
+
+struct ChallengeView: View {
+    @ObservedObject var store: ChallengeStore
+    
+    init(store: ChallengeStore) {
+        self.store = store
     }
     
     var body: some View {
         VStack {
             timer
-            Image(challenge.imageName)
+            Image(store.challenge.imageName)
                 .resizable()
                 .frame(width:200, height:200)
                 .scaledToFit()
             
             HStack {
-                Text(challenge.challengeName)
+                Text(store.challenge.challengeName)
                     .font(.title)
-                    
-                    //.frame(maxWidth: .infinity)
-                    //.offset (x: -25, y: 0)
-                    //.multilineTextAlignment(.leading)
-                    
-                    //.fixedSize(horizontal: false, vertical: true)
                     .padding()
                    
                 Spacer()
             }
-            
 
-            
             Spacer()
-               // .padding()
+    
             HStack{
                 Image(systemName: "rosette")
-                    //.offset (x: -110, y: -70)
                 Text("1000")
                     .font(.title3)
-                    //.offset (x: -112, y: -70)
                 
                 Image(systemName: "hare")
                     .aspectRatio(contentMode: .fit)
-                    //.offset(x:-110, y:-70)
+
                 Text("76")
                     .font(.title3)
-                    //.offset(x:-112, y:-70)
+
             }
                 
           
             tagPills
-                //.offset(x:26, y:-50)
             
             HStack(spacing:20){
                 
@@ -88,35 +112,15 @@ struct ChallengeView: View {
                 .shadow(radius: 5, x: 0, y: 2)
             }
             .padding()
+        }.onAppear {
+            store.start()
         }
     }
 }
 
 private extension ChallengeView {
-    mutating func startTimer() {
-        let oneDayTimeInterval: TimeInterval = 86400
-        let timeElapsedSinceChallengeStart = (challenge.startDate?.timeIntervalSinceNow ?? oneDayTimeInterval) * -1
-        let remainingChallengeTime = max(oneDayTimeInterval - timeElapsedSinceChallengeStart, 0)
-
-        self.timerCount = remainingChallengeTime
-    }
-    
-    mutating func handleTimer(_ timer: Timer) {
-        print(self.timerCount)
-        guard self.timerCount >= 0 else {
-            timer.invalidate()
-            return }
-        self.timerCount -= 60
-    }
-    
-    func convertSecondsToTimeLabel(_ seconds: TimeInterval) -> String {
-        let hour = Int(seconds / 3600)
-        let minutes = Int(seconds / 60) % 60
-        return String(format: "%02d:%02d", hour, minutes)
-    }
-    
     var timer: some View {
-        Text(convertSecondsToTimeLabel(timerCount))
+        Text(store.timerLabel)
             .font(.system(size: 80))
             .background {
                 Color.appYellow
@@ -129,7 +133,7 @@ private extension ChallengeView {
     var tagPills: some View {
         ScrollView(.horizontal) {
             HStack(alignment: .center) {
-                ForEach(challenge.tags, id: \.self) { category in
+                ForEach(store.challenge.tags, id: \.self) { category in
                     Text(category)
                         .padding(5)
                         .background { Color("appYellow") }
@@ -145,6 +149,6 @@ private extension ChallengeView {
     
 struct ChallengeView_Previews: PreviewProvider {
     static var previews: some View {
-        ChallengeView(challenge: challenges[0])
+        ChallengeView(store: ChallengeStore(challenge: challenges[0]))
     }
 }

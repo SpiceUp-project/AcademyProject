@@ -20,7 +20,6 @@
 		4FB5C70D28FD7087003AA55E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FB5C70C28FD7087003AA55E /* Preview Assets.xcassets */; };
 		4FB5C73028FD729F003AA55E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5C72F28FD729F003AA55E /* CardView.swift */; };
 		D50A043E2907379B002606DE /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50A043D2907379B002606DE /* Color+Extension.swift */; };
-		D50DC2D12908199B00D6AAE0 /* Testing Sophies Branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50DC2D02908199B00D6AAE0 /* Testing Sophies Branch.swift */; };
 		D50DC2D22908217A00D6AAE0 /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACE30529042A7100756F7A /* ChallengeView.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +57,6 @@
 		4FB5C71C28FD7087003AA55E /* SpicyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpicyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FB5C72F28FD729F003AA55E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		D50A043D2907379B002606DE /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
-		D50DC2D02908199B00D6AAE0 /* Testing Sophies Branch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Testing Sophies Branch.swift"; sourceTree = "<group>"; };
 		D5ACE30529042A7100756F7A /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,7 +95,6 @@
 				D5ACE30529042A7100756F7A /* ChallengeView.swift */,
 				1329398229046A7A00E5AAAC /* MainNavigationView.swift */,
 				132939862904843C00E5AAAC /* TestView.swift */,
-				D50DC2D02908199B00D6AAE0 /* Testing Sophies Branch.swift */,
 				4FA9A63E29015349001A2931 /* SpicyTabView.swift */,
 				13BFB56829070E36008BA3B5 /* OneMoreView.swift */,
 			);
@@ -283,7 +280,6 @@
 			files = (
 				1329397D29042C1300E5AAAC /* DateView.swift in Sources */,
 				4FB5C70828FD7086003AA55E /* ContentView.swift in Sources */,
-				D50DC2D12908199B00D6AAE0 /* Testing Sophies Branch.swift in Sources */,
 				D50A043E2907379B002606DE /* Color+Extension.swift in Sources */,
 				13BFB56929070E36008BA3B5 /* OneMoreView.swift in Sources */,
 				4FB5C73028FD729F003AA55E /* CardView.swift in Sources */,

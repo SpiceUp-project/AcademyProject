@@ -22,6 +22,11 @@ struct Challenge: Hashable, CustomStringConvertible {
     var description: String {
         return "\(challengeName), id: \(id)"
     }
+    
+    mutating func startChallenge() {
+        guard startDate == nil else { return }
+        startDate = Date()
+    }
 }
 
 var challenges: [Challenge] = [
