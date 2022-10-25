@@ -18,7 +18,7 @@ func universalHeight(height: CGFloat) -> CGFloat {
 func universalWidth(width: CGFloat) -> CGFloat {
     (screenWidth / 390) * width
 }
-
+/Users/viacheslav/Developer/AcademyProject/SpicyApp/Views/ContentView.swift
  struct ContentView: View {
      @State var showView = false //for the modal sheet/Users/viacheslav/Developer/AcademyProject/SpicyApp/Views/ContentView.swift
      /// List of challenges
