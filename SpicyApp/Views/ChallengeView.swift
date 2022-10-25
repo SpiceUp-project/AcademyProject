@@ -8,23 +8,25 @@
 import SwiftUI
 
 struct ChallengeView: View {
-    
     private var challenge: Challenge
-//    @State var challenge = "Take a cup of coffee with a stranger"
-    @State var timerCount: TimeInterval = 86000
-//    @State var categories = ["Calm", "Communication", "Cheap", "Stranger"]
+    @State private var timerCount: TimeInterval = 0
+    
+    init(challenge: Challenge) {
+        self.challenge = challenge
+        
+        startTimer()
+    }
     
     var body: some View {
         VStack {
-            header
             timer
-            Image("coffee1")
+            Image(challenge.imageName)
                 .resizable()
                 .frame(width:200, height:200)
                 .scaledToFit()
             
             HStack {
-                Text(challenge)
+                Text(challenge.challengeName)
                     .font(.title)
                     
                     //.frame(maxWidth: .infinity)
@@ -57,7 +59,7 @@ struct ChallengeView: View {
             }
                 
           
-            categoryPills
+            tagPills
                 //.offset(x:26, y:-50)
             
             HStack(spacing:20){
@@ -90,10 +92,23 @@ struct ChallengeView: View {
     }
 }
 
-
-
-
 private extension ChallengeView {
+    mutating func startTimer() {
+        let oneDayTimeInterval: TimeInterval = 86400
+        let timeElapsedSinceChallengeStart = (challenge.startDate?.timeIntervalSinceNow ?? oneDayTimeInterval) * -1
+        let remainingChallengeTime = max(oneDayTimeInterval - timeElapsedSinceChallengeStart, 0)
+
+        self.timerCount = remainingChallengeTime
+    }
+    
+    mutating func handleTimer(_ timer: Timer) {
+        print(self.timerCount)
+        guard self.timerCount >= 0 else {
+            timer.invalidate()
+            return }
+        self.timerCount -= 60
+    }
+    
     func convertSecondsToTimeLabel(_ seconds: TimeInterval) -> String {
         let hour = Int(seconds / 3600)
         let minutes = Int(seconds / 60) % 60
@@ -111,10 +126,10 @@ private extension ChallengeView {
             }
     }
     
-    var categoryPills: some View {
+    var tagPills: some View {
         ScrollView(.horizontal) {
             HStack(alignment: .center) {
-                ForEach(categories, id: \.self) { category in
+                ForEach(challenge.tags, id: \.self) { category in
                     Text(category)
                         .padding(5)
                         .background { Color("appYellow") }
@@ -125,13 +140,11 @@ private extension ChallengeView {
             }
         }
     }
-
-    }
+    
 }
     
-    struct ChallengeView_Previews: PreviewProvider {
-        static var previews: some View {
-            ChallengeView()
-        }
+struct ChallengeView_Previews: PreviewProvider {
+    static var previews: some View {
+        ChallengeView(challenge: challenges[0])
     }
-
+}
