@@ -115,7 +115,8 @@ import SwiftUI
                              self.swipeStatus = .none
                          }
 
-                 }.onEnded { value in
+                 }
+                    .onEnded { value in
                      // determine snap distance > 0.5 aka half the width of the screen
                          if abs(self.getGesturePercentage(geometry, from: value)) > self.thresholdPercentage {
                              self.onRemove(self.challenge)
@@ -130,7 +131,7 @@ import SwiftUI
 
  struct CardView_Previews: PreviewProvider {
      static var previews: some View {
-         CardView(challenge: Challenge(id: 0, challengeName: "Challenge name", points: 23, currentlyTaking: 4, imageName: "shelter", tags: ["Tag 1", "Tag 2", "Tag 3", "Tag long long"]),
+         CardView(challenge: Challenge(id: 0, challengeName: "Challenge name", points: 23, currentlyTaking: 4, imageName: "shelter", tags: ["Tag 1", "Tag 2", "Tag 3", "Tag long long"], Description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum"),
                   onRemove: { _ in
                      // do nothing
              })

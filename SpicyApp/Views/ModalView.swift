@@ -9,11 +9,17 @@ import SwiftUI
 
 struct ModalView: View {
     
+    let challenge: Challenge
+    
+    init(challenge: Challenge) {
+        self.challenge = challenge
+    }
+    
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         ZStack {
-            Color.white
+            Color("appBeige")
                 .ignoresSafeArea()
             
             VStack {
@@ -32,7 +38,7 @@ struct ModalView: View {
                     Spacer()
                     
                     ScrollView {
-                        Text("Take a cup of coffee with a stranger" + "\n")
+                        Text(challenge.challengeName)
                             .font(.title)
                             .multilineTextAlignment(.leading)
 
@@ -89,7 +95,7 @@ struct ModalView: View {
     
     struct ModalView_Previews: PreviewProvider {
         static var previews: some View {
-            ModalView()
+            ModalView(challenge: challenges[3])
         }
     }
     
