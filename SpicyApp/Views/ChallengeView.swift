@@ -54,11 +54,10 @@ struct ChallengeView: View {
     
     var body: some View {
         VStack {
-            Text("Today's challenge                      ")
-                .font(.largeTitle)
-                .multilineTextAlignment(.leading)
-                .padding()
+
             timer
+                .padding(.top, 10)
+            
             Image(store.challenge.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -82,31 +81,31 @@ struct ChallengeView: View {
 
             
             HStack(spacing:20){
+            
+                NavigationLink ("Give up", destination:  ChallengeCompletionView())
+                        .font(.title3)
+                        .frame(width: 140)
+                        .padding()
+                        .foregroundColor(.black)
+                        .background(Color("appGray"))
+                        .cornerRadius(10)
+                        .shadow(color: .gray, radius: 5, x: 0, y: 2)
                 
-                Button("Give up         ") {
-                    print("Tapping the Give up button")
-                }
-                .font(.title3)
-                .padding()
-                .foregroundColor(.black)
-                .background(Color("appGray"))
-                .cornerRadius(18)
-                .shadow(color: .gray, radius: 5, x: 0, y: 2)
+                NavigationLink ("Done", destination:  ChallengeCompletionView())
+                        .font(.title3)
+                        .frame(width: 140)
+                        .padding()
+                        .foregroundColor(.black)
+                        .background(Color("appYellow"))
+                        .cornerRadius(10)
+                        .shadow(color: .gray, radius: 5, x: 0, y: 2)
                 
-                Button("Done              ") {
-                    print("Done button was tapped")
-                }
-                .font(.title3)
-                .padding()
-                .foregroundColor(.black)
-                .background(Color("appYellow"))
-                .cornerRadius(18)
-                .shadow(color: .gray, radius: 5, x: 0, y: 2)
             }
             .padding(.bottom)
         }.onAppear {
             store.start()
         }
+        .navigationTitle("Today's challenge")
     }
 }
 
@@ -141,6 +140,8 @@ private extension ChallengeView {
     
 struct ChallengeView_Previews: PreviewProvider {
     static var previews: some View {
-        ChallengeView(store: ChallengeStore(challenge: challenges[0]))
+        NavigationView{
+            ChallengeView(store: ChallengeStore(challenge: challenges[0]))
+        }
     }
 }
