@@ -23,18 +23,6 @@ struct MainNavigationView: View {
         
     }
     
-    //                .toolbar {
-    //                    ToolbarItem (placement: .navigationBarTrailing){
-    //                        NavigationLink(destination: TestView()) {
-    //                            Image(systemName: "person")
-    //                                .resizable()
-    //                                .frame(width: 60, height: 60)
-    //                                .padding(EdgeInsets(top: 80, leading: 0, bottom: 0, trailing: 0))
-    //                        }
-    //                    }
-    //                }
-    
-    
 }
 
 
