@@ -54,9 +54,14 @@ struct ChallengeView: View {
     
     var body: some View {
         VStack {
+            Text("Today's challenge          ")
+                .font(.largeTitle)
+                .multilineTextAlignment(.leading)
+                .padding()
             timer
             Image(store.challenge.imageName)
                 .resizable()
+                .aspectRatio(contentMode: .fit)
                 .frame(width:200, height:200)
                 .scaledToFit()
             
@@ -67,9 +72,6 @@ struct ChallengeView: View {
                    
                 Spacer()
             }
-
-            Spacer()
-    
             HStack{
                 Image(systemName: "rosette")
                 Text("1000")
@@ -85,33 +87,32 @@ struct ChallengeView: View {
                 
           
             tagPills
+            Spacer()
+
             
             HStack(spacing:20){
                 
-                Button("Give up") {
+                Button("Give up         ") {
                     print("Tapping the Give up button")
                 }
-                .padding(.horizontal,30)
-                .frame(maxWidth: .infinity)
-                .padding(20)
                 .font(.title3)
+                .padding()
                 .foregroundColor(.black)
-                .background(Color.appGray)
+                .background(Color("appGray"))
                 .cornerRadius(18)
-                .shadow(radius: 5, x: 0, y: 2)
+                .shadow(color: .gray, radius: 5, x: 0, y: 2)
                 
-                Button("Done") {
+                Button("Done              ") {
                     print("Done button was tapped")
                 }
-                .frame(maxWidth: .infinity)
-                .padding(20)
                 .font(.title3)
+                .padding()
                 .foregroundColor(.black)
-                .background(Color.appYellow)
+                .background(Color("appYellow"))
                 .cornerRadius(18)
-                .shadow(radius: 5, x: 0, y: 2)
+                .shadow(color: .gray, radius: 5, x: 0, y: 2)
             }
-            .padding()
+            .padding(.bottom)
         }.onAppear {
             store.start()
         }
