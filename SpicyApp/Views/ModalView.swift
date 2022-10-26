@@ -35,23 +35,56 @@ struct ModalView: View {
                 }
                 .padding()
                 .frame(maxWidth: .infinity, alignment: .trailing)
+                    
                     Spacer()
                     
                     ScrollView {
                         Text(challenge.challengeName)
                             .font(.title)
                             .multilineTextAlignment(.leading)
+                            .padding(.bottom, 10)
+                            .bold()
+                        HStack(alignment: .center) {
+                                ForEach(self.challenge.tags, id: \.self) { tag in
+                                    Text(tag)
+                                        .font(.footnote)
+                                        .padding(.vertical, 5)
+                                        .padding(.horizontal, 15)
+                                        .background { Color("appYellow") }
+                                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                                        .lineLimit(1)
+//                                         .fixedSize(horizontal: false, vertical: true)
+                                   }
+                            }
+                        Text("Earn \(self.challenge.points) points")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                        Text ("Description")
+                            .font(.body)
+                            .multilineTextAlignment(.leading)
+                            .padding(.vertical, 10)
+                            .bold()
+                        Text (challenge.Description)
+                            .font(.body)
+                            .multilineTextAlignment(.leading)
+                            .padding()
+                        
+                        Spacer()
+                        
+                        Text (challenge.Tips)
 
                         
-                        HStack {
+                 /*       HStack {
                             Image(systemName: "medal")
                                 .foregroundColor(.black)
                                 .font(.headline)
-                            }
+                            } */
                         
                         
+                
+                    
                     }
-                    .padding(.bottom, 150)
+
                     
                     HStack {
                         Button {
@@ -61,7 +94,7 @@ struct ModalView: View {
                                 .font(.title3)
                                 .padding()
                                 .foregroundColor(.black)
-                                .background(Color(.gray))
+                                .background(Color("appGray"))
                                 .cornerRadius(18)
                                 .shadow(color: .gray, radius: 5, x: 0, y: 2)
                             
@@ -70,7 +103,7 @@ struct ModalView: View {
                         Button {
                             print("Edit button was tapped")
                         } label: {
-                            Text("Done               ")
+                            Text("Accept               ")
                                 .font(.title3)
                                 .padding()
                                 .foregroundColor(.black)
