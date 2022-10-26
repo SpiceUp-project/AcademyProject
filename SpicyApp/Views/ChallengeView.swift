@@ -72,21 +72,11 @@ struct ChallengeView: View {
                    
                 Spacer()
             }
-            HStack{
-                Image(systemName: "rosette")
-                Text("1000")
-                    .font(.title3)
-                
-                Image(systemName: "hare")
-                    .aspectRatio(contentMode: .fit)
-
-                Text("76")
-                    .font(.title3)
-
-            }
-                
+           
           
             tagPills
+                .multilineTextAlignment(.trailing)
+            
             Spacer()
 
             
