@@ -48,7 +48,14 @@ struct ModalView: View {
                                 .foregroundColor(.black)
                                 .font(.headline)
                             }
-                        
+                        VStack {
+                            Text(challenge.challengeDescription)
+                                .font(.body)
+                                .multilineTextAlignment(.leading)
+                            Text(challenge.challengeTips)
+                                .font(.body)
+                                .multilineTextAlignment(.leading)
+                        }
                         
                     }
                     .padding(.bottom, 150)

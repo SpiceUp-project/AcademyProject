@@ -10,6 +10,7 @@ import SwiftUI
  struct CardView: View {
      @State private var translation: CGSize = .zero
      @State private var swipeStatus: LikeDislike = .none
+     @State private var swipeDecide: AcceptDismiss = .nope
 
      private var challenge: Challenge
      private var onRemove: (_ challenge: Challenge) -> Void
@@ -19,6 +20,9 @@ import SwiftUI
      private enum LikeDislike: Int {
          case like, dislike, none
      }
+     
+     @State var AcceptDismiss: Bool = false
+
 
      init(challenge: Challenge, onRemove: @escaping (_ challenge: Challenge) -> Void) {
          self.challenge = challenge
@@ -37,36 +41,36 @@ import SwiftUI
          GeometryReader { geometry in
              VStack(alignment: .leading) {
                   ZStack(alignment: self.swipeStatus == .like ? .topLeading : .topTrailing) {
-                     Image(self.challenge.imageName)
-                         .resizable()
-                         .aspectRatio(contentMode: .fill)
-                         .frame(width: geometry.size.width, height: geometry.size.height * 0.75)
-                         .clipped()
+                      Image(self.challenge.imageName)
+                          .resizable()
+                          .aspectRatio(contentMode: .fill)
+                          .frame(width: geometry.size.width, height: geometry.size.height * 0.75)
+                          .clipped()
 
-                     if self.swipeStatus == .like {
-                         Text("LIKE")
-                             .font(.headline)
-                             .padding()
-                             .cornerRadius(10)
-                             .foregroundColor(Color.green)
-                             .overlay(
-                                 RoundedRectangle(cornerRadius: 10)
-                                     .stroke(Color.green, lineWidth: 3.0)
-                         ).padding(24)
-                             .rotationEffect(Angle.degrees(-45))
-                     } else if self.swipeStatus == .dislike {
-                         Text("DISLIKE")
-                             .font(.headline)
-                             .padding()
-                             .cornerRadius(10)
-                             .foregroundColor(Color.red)
-                             .overlay(
-                                 RoundedRectangle(cornerRadius: 10)
-                                     .stroke(Color.red, lineWidth: 3.0)
-                         ).padding(.top, 45)
-                             .rotationEffect(Angle.degrees(45))
-                     }
-                 }
+                      if self.swipeStatus == .like {
+                          Text("LIKE")
+                              .font(.headline)
+                              .padding()
+                              .cornerRadius(10)
+                              .foregroundColor(Color.green)
+                              .overlay(
+                                  RoundedRectangle(cornerRadius: 10)
+                                      .stroke(Color.green, lineWidth: 3.0)
+                          ).padding(24)
+                              .rotationEffect(Angle.degrees(-45))
+                      } else if self.swipeStatus == .dislike {
+                          Text("DISLIKE")
+                              .font(.headline)
+                              .padding()
+                              .cornerRadius(10)
+                              .foregroundColor(Color.red)
+                              .overlay(
+                                  RoundedRectangle(cornerRadius: 10)
+                                      .stroke(Color.red, lineWidth: 3.0)
+                          ).padding(.top, 45)
+                              .rotationEffect(Angle.degrees(45))
+                      }
+                  }
 
                  HStack {
                      VStack(alignment: .leading, spacing: 6) {
@@ -99,23 +103,28 @@ import SwiftUI
              .background(Color.white)
              .cornerRadius(10)
              .shadow(radius: 5)
-//             .animation(.interactiveSpring())
+ //            .animation(.interactiveSpring())
              .offset(x: self.translation.width, y: 0)
              .rotationEffect(.degrees(Double(self.translation.width / geometry.size.width) * 25), anchor: .bottom)
              .gesture(
                  DragGesture()
-                     .onChanged { value in
-                         self.translation = value.translation
-
-                         if (self.getGesturePercentage(geometry, from: value)) >= self.thresholdPercentage {
-                             self.swipeStatus = .like
-                         } else if self.getGesturePercentage(geometry, from: value) <= -self.thresholdPercentage {
-                             self.swipeStatus = .dislike
-                         } else {
-                             self.swipeStatus = .none
-                         }
-
-                 }
+                    .onChanged { value in
+                        self.translation = value.translation
+                        
+                        if (self.getGesturePercentage(geometry, from: value)) >= self.thresholdPercentage {
+                            self.swipeStatus = .like
+                            self.swipeDecide = .accept
+                        } else if self.getGesturePercentage(geometry, from: value) <= -self.thresholdPercentage {
+                            self.swipeStatus = .dislike
+                        } else {
+                            self.swipeStatus = .none
+                            
+                        }
+                        if self.swipeDecide == .accept {
+                            
+                        }
+                    }
+                 
                     .onEnded { value in
                      // determine snap distance > 0.5 aka half the width of the screen
                          if abs(self.getGesturePercentage(geometry, from: value)) > self.thresholdPercentage {
@@ -126,16 +135,5 @@ import SwiftUI
                      }
              )
          }
-     }
- }
-
- struct CardView_Previews: PreviewProvider {
-     static var previews: some View {
-         CardView(challenge: Challenge(id: 0, challengeName: "Challenge name", points: 23, currentlyTaking: 4, imageName: "shelter", tags: ["Tag 1", "Tag 2", "Tag 3", "Tag long long"], Description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum"),
-                  onRemove: { _ in
-                     // do nothing
-             })
-             .frame(height: 400)
-             .padding()
      }
  }

@@ -13,6 +13,7 @@ struct MainNavigationView: View {
     var body: some View {
         NavigationView {
             VStack {
+                if 
                 ContentView()
                 NavigationLink(destination: TestView(challenge: randomChallenge)) {
                     GetRandoNavLinkViewLabel()

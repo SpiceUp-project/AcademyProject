@@ -27,6 +27,7 @@ func universalWidth(width: CGFloat) -> CGFloat {
      /// List of challenges
      ///
      @State var shuffledChallenges: [Challenge] = challenges.shuffled()
+    
      
      
      let randomChallenge = challenges.randomElement()
@@ -68,6 +69,7 @@ func universalWidth(width: CGFloat) -> CGFloat {
                     DateView()
                          Button {
                              showView.toggle()
+                             
                          } label: {
                              ZStack {
 
