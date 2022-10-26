@@ -42,7 +42,7 @@
 
 /* Begin PBXFileReference section */
 		1329397C29042C1300E5AAAC /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
-		1329398029043BAB00E5AAAC /* Challenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Challenges.swift; path = SpicyApp/Models/Challenges.swift; sourceTree = SOURCE_ROOT; };
+		1329398029043BAB00E5AAAC /* Challenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Challenges.swift; path = SpicyApp/Views/Challenges.swift; sourceTree = SOURCE_ROOT; };
 		1329398229046A7A00E5AAAC /* MainNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationView.swift; sourceTree = "<group>"; };
 		132939862904843C00E5AAAC /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		13BFB56A29085051008BA3B5 /* GetRandoNavLinkViewLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRandoNavLinkViewLabel.swift; sourceTree = "<group>"; };
@@ -86,17 +86,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		13BFB56C290881E2008BA3B5 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				1329398029043BAB00E5AAAC /* Challenges.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		4FA9A63429013803001A2931 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1329398029043BAB00E5AAAC /* Challenges.swift */,
 				4FB5C70728FD7086003AA55E /* ContentView.swift */,
 				4FB5C72F28FD729F003AA55E /* CardView.swift */,
 				4F85555F29002DAE00786E46 /* ModalView.swift */,
@@ -134,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				4FB5C70528FD7086003AA55E /* SpicyAppApp.swift */,
-				13BFB56C290881E2008BA3B5 /* Models */,
 				4FA9A63429013803001A2931 /* Views */,
 				4FB5C70928FD7087003AA55E /* Assets.xcassets */,
 				4FB5C70B28FD7087003AA55E /* Preview Content */,
