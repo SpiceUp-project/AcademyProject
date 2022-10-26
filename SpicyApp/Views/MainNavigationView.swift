@@ -14,7 +14,7 @@ struct MainNavigationView: View {
         NavigationView {
             VStack {
                 ContentView()
-                NavigationLink(destination: TestView(challenge: randomChallenge)) {
+                NavigationLink(destination: ChallengeView(store: ChallengeStore(challenge: randomChallenge))){
                     GetRandoNavLinkViewLabel()
                 }
             }
