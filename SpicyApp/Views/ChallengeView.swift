@@ -82,7 +82,7 @@ struct ChallengeView: View {
             
             HStack(spacing:20){
             
-                NavigationLink ("Give up", destination:  ChallengeCompletionView())
+                NavigationLink ("Give up", destination:  GivingUpView())
                         .font(.title3)
                         .frame(width: 140)
                         .padding()

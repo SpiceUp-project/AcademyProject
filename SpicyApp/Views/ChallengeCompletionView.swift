@@ -17,10 +17,8 @@ struct ChallengeCompletionView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             
-            
             Text("Done!")
-                .font(.custom("SFProDisplay", fixedSize: 64))
-                .fontWeight(.bold)
+                .font(.system(size: 64, weight: .heavy, design: .default))
                 .padding(.bottom, 10)
             
             HStack{
@@ -32,17 +30,16 @@ struct ChallengeCompletionView: View {
             
             Spacer()
             
-            Button {
-                print("Edit button was tapped")
-            } label: {
-                Text("See your achievements!   ")
+            NavigationLink ("See your achievements!", destination:  TestView(challenge: challenges[1]))
                     .font(.title3)
+                    .frame(width: 320)
                     .padding()
                     .foregroundColor(.black)
                     .background(Color("appYellow"))
-                    .cornerRadius(18)
+                    .cornerRadius(10)
                     .shadow(color: .gray, radius: 5, x: 0, y: 2)
-            }
+            Spacer()
+            
         }
     }
 }

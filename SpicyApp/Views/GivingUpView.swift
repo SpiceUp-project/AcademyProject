@@ -19,35 +19,24 @@ struct GivingUpView: View {
             
             
             Text("You can do this!")
-                .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
-                .fontWeight(.heavy)
+                .font(.system(size: 42, weight: .heavy, design: .default))
                 .padding(.bottom, 10)
             
-            Text("You always pass failure on your way to success!")
-                .multilineTextAlignment(.leading)
-                .font(.headline)
+            Text("You always pass failure on your way to success! \nOn to the next..")
+                .multilineTextAlignment(.center)
                 .fontWeight(.medium)
-                .padding(.bottom, 10)
-            
-            Text("On to the next..")
-                .multilineTextAlignment(.leading)
-                .font(.body)
-                .fontWeight(.medium)
-
             
             Spacer()
             
-            Button {
-                print("Edit button was tapped")
-            } label: {
-                Text("New challenge                       ")
+            NavigationLink ("Get new challenge", destination:  MainNavigationView())
                     .font(.title3)
+                    .frame(width: 320)
                     .padding()
                     .foregroundColor(.black)
                     .background(Color("appYellow"))
-                    .cornerRadius(18)
+                    .cornerRadius(10)
                     .shadow(color: .gray, radius: 5, x: 0, y: 2)
-            }
+            Spacer()
         }
     }
 }
