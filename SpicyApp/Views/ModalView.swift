@@ -42,37 +42,55 @@ struct ModalView: View {
                         Text(challenge.challengeName)
                             .font(.title)
                             .multilineTextAlignment(.leading)
-                            .padding(.bottom, 10)
+                            .padding([.bottom, .trailing], 10)
                             .bold()
+                        
                         HStack(alignment: .center) {
                                 ForEach(self.challenge.tags, id: \.self) { tag in
                                     Text(tag)
                                         .font(.footnote)
-                                        .padding(.vertical, 5)
-                                        .padding(.horizontal, 15)
+                                        .padding([.top, .leading, .bottom], 5)
+                                        .padding(.horizontal, 20)
+            
                                         .background { Color("appYellow") }
                                         .clipShape(RoundedRectangle(cornerRadius: 15))
                                         .lineLimit(1)
 //                                         .fixedSize(horizontal: false, vertical: true)
                                    }
+                                .padding([.top, .bottom, .trailing], 6.0)
+                            
                             }
-                        Text("Earn \(self.challenge.points) points")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
+                        
+                        HStack {
+                            Image(systemName: "medal")
+                            Text("Earn \(self.challenge.points) points")
+                                .font(.subheadline)
+                                .foregroundColor(.black)
+                                .padding(.trailing, 210.0)
+                        }
+                        
                         Text ("Description")
                             .font(.body)
                             .multilineTextAlignment(.leading)
-                            .padding(.vertical, 10)
+                            .padding([.top, .bottom, .trailing], 3.0)
+                            .padding(.trailing, 257.0)
                             .bold()
                         Text (challenge.Description)
                             .font(.body)
                             .multilineTextAlignment(.leading)
                             .padding()
                         
-                        Spacer()
+                        Text ("Tips and Tricks")
+                            .font(.body)
+                            .multilineTextAlignment(.leading)
+                            .padding([.top, .bottom, .trailing], 3.0)
+                            .padding(.trailing, 235.0)
+                            .bold()
                         
                         Text (challenge.Tips)
-
+                            .font(.body)
+                            .multilineTextAlignment(.leading)
+                            .padding()
                         
                  /*       HStack {
                             Image(systemName: "medal")
@@ -128,7 +146,7 @@ struct ModalView: View {
     
     struct ModalView_Previews: PreviewProvider {
         static var previews: some View {
-            ModalView(challenge: challenges[3])
+            ModalView(challenge: challenges[0])
         }
     }
     
