@@ -55,13 +55,13 @@ struct ChallengeView: View {
     var body: some View {
         VStack {
             Text("Today's Challenges")
-                
+            
                 .font(.system(size: 32, weight: .heavy, design: .default))
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.top, 70)
                 .padding(.leading, 15)
                 .padding(.bottom, 10)
-
+            
             
             timer
                 .padding(.top, 10)
@@ -76,37 +76,36 @@ struct ChallengeView: View {
                 Text(store.challenge.challengeName)
                     .font(.title)
                     .padding(.horizontal)
-                   
+                
                 Spacer()
             }
-           
-          
+            
+            
             tagPills
                 .multilineTextAlignment(.trailing)
                 .padding(.horizontal)
             
             Spacer()
-
             
             HStack(spacing:20){
-            
+                
                 NavigationLink ("Give up", destination:  GivingUpView())
-                        .font(.title3)
-                        .frame(width: 140)
-                        .padding()
-                        .foregroundColor(.black)
-                        .background(Color("appGray"))
-                        .cornerRadius(10)
-                        .shadow(color: .gray, radius: 5, x: 0, y: 2)
+                    .font(.title3)
+                    .frame(width: 140)
+                    .padding()
+                    .foregroundColor(.black)
+                    .background(Color("appGray"))
+                    .cornerRadius(10)
+                    .shadow(color: .gray, radius: 5, x: 0, y: 2)
                 
                 NavigationLink ("Done", destination:  ChallengeCompletionView())
-                        .font(.title3)
-                        .frame(width: 140)
-                        .padding()
-                        .foregroundColor(.black)
-                        .background(Color("appYellow"))
-                        .cornerRadius(10)
-                        .shadow(color: .gray, radius: 5, x: 0, y: 2)
+                    .font(.title3)
+                    .frame(width: 140)
+                    .padding()
+                    .foregroundColor(.black)
+                    .background(Color("appYellow"))
+                    .cornerRadius(10)
+                    .shadow(color: .gray, radius: 5, x: 0, y: 2)
                 
             }
             .padding(.bottom)
@@ -146,7 +145,7 @@ private extension ChallengeView {
     }
     
 }
-    
+
 struct ChallengeView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{

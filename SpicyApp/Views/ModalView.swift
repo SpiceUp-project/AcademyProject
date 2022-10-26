@@ -46,20 +46,20 @@ struct ModalView: View {
                             .bold()
                         
                         HStack(alignment: .center) {
-                                ForEach(self.challenge.tags, id: \.self) { tag in
-                                    Text(tag)
-                                        .font(.footnote)
-                                        .padding([.top, .leading, .bottom], 5)
-                                        .padding(.horizontal, 20)
-            
-                                        .background { Color("appYellow") }
-                                        .clipShape(RoundedRectangle(cornerRadius: 15))
-                                        .lineLimit(1)
-//                                         .fixedSize(horizontal: false, vertical: true)
-                                   }
-                                .padding([.top, .bottom, .trailing], 6.0)
-                            
+                            ForEach(self.challenge.tags, id: \.self) { tag in
+                                Text(tag)
+                                    .font(.footnote)
+                                    .padding([.top, .leading, .bottom], 5)
+                                    .padding(.horizontal, 20)
+                                
+                                    .background { Color("appYellow") }
+                                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                                    .lineLimit(1)
+                                //                                         .fixedSize(horizontal: false, vertical: true)
                             }
+                            .padding([.top, .bottom, .trailing], 6.0)
+                            
+                        }
                         
                         HStack {
                             Image(systemName: "medal")
@@ -92,17 +92,17 @@ struct ModalView: View {
                             .multilineTextAlignment(.leading)
                             .padding()
                         
-                 /*       HStack {
-                            Image(systemName: "medal")
-                                .foregroundColor(.black)
-                                .font(.headline)
-                            } */
+                        /*       HStack {
+                         Image(systemName: "medal")
+                         .foregroundColor(.black)
+                         .font(.headline)
+                         } */
                         
                         
-                
-                    
+                        
+                        
                     }
-
+                    
                     
                     HStack {
                         Button {
