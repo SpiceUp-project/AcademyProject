@@ -19,13 +19,13 @@ struct GivingUpView: View {
             
             
             Text("You can do this!")
-                .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
-                .fontWeight(.heavy)
+                .font(.custom("SFProDisplay", fixedSize: 50))
+                .fontWeight(.bold)
                 .padding(.bottom, 10)
             
             Text("You always pass failure on your way to success!")
-                .multilineTextAlignment(.leading)
-                .font(.headline)
+                .multilineTextAlignment(.center)
+                .font(.custom("SFProText", fixedSize: 19))
                 .fontWeight(.medium)
                 .padding(.bottom, 10)
             
