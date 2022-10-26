@@ -65,6 +65,13 @@ func universalWidth(width: CGFloat) -> CGFloat {
                      .offset(x: -geometry.size.width / 4, y: -geometry.size.height / 2)
 
                 VStack(spacing: 24) {
+                    
+                    Text("Challenges")
+                        .font(.system(size: 32, weight: .heavy, design: .default))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.top, 20)
+//                        .padding(.bottom, 10)
+                    
                     DateView()
                          Button {
                              showView.toggle()

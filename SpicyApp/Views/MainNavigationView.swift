@@ -13,12 +13,15 @@ struct MainNavigationView: View {
     var body: some View {
         NavigationView {
             VStack {
+                
                 ContentView()
+                
                 NavigationLink(destination: ChallengeView(store: ChallengeStore(challenge: randomChallenge))){
                     GetRandoNavLinkViewLabel()
                 }
             }
             .navigationTitle("Challenges")
+            .navigationBarHidden(true)
         }
         
     }
