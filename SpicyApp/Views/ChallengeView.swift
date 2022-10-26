@@ -54,7 +54,7 @@ struct ChallengeView: View {
     
     var body: some View {
         VStack {
-            Text("Today's challenge          ")
+            Text("Today's challenge                      ")
                 .font(.largeTitle)
                 .multilineTextAlignment(.leading)
                 .padding()
@@ -62,13 +62,13 @@ struct ChallengeView: View {
             Image(store.challenge.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width:200, height:200)
+                .frame(width:350, height:350)
                 .scaledToFit()
             
             HStack {
                 Text(store.challenge.challengeName)
                     .font(.title)
-                    .padding()
+                    .padding(.horizontal)
                    
                 Spacer()
             }
@@ -76,6 +76,7 @@ struct ChallengeView: View {
           
             tagPills
                 .multilineTextAlignment(.trailing)
+                .padding(.horizontal)
             
             Spacer()
 
