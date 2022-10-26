@@ -88,6 +88,7 @@
 		4FA9A63429013803001A2931 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1329398029043BAB00E5AAAC /* Challenges.swift */,
 				4FB5C70728FD7086003AA55E /* ContentView.swift */,
 				4FB5C72F28FD729F003AA55E /* CardView.swift */,
 				4F85555F29002DAE00786E46 /* ModalView.swift */,
@@ -99,14 +100,6 @@
 				13BFB56829070E36008BA3B5 /* OneMoreView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		4FA9A63529013839001A2931 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				1329398029043BAB00E5AAAC /* Challenges.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		4FB5C6F928FD7086003AA55E = {
@@ -132,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				4FB5C70528FD7086003AA55E /* SpicyAppApp.swift */,
-				4FA9A63529013839001A2931 /* Models */,
 				4FA9A63429013803001A2931 /* Views */,
 				4FB5C70928FD7087003AA55E /* Assets.xcassets */,
 				4FB5C70B28FD7087003AA55E /* Preview Content */,
