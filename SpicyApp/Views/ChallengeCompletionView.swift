@@ -41,6 +41,8 @@ struct ChallengeCompletionView: View {
             Spacer()
             
         }
+        .navigationTitle("Test Title")
+        .navigationBarHidden(true)
     }
 }
 
@@ -48,6 +50,8 @@ struct ChallengeCompletionView: View {
 
 struct ChallengeCompletionView_Previews: PreviewProvider {
     static var previews: some View {
-        ChallengeCompletionView()
+        NavigationView {
+            ChallengeCompletionView()
+        }
     }
 }
