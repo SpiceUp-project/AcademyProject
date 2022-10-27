@@ -145,7 +145,7 @@ struct ModalView: View {
                 }
             }
         }//zstack
-    }
+
     
     
     
