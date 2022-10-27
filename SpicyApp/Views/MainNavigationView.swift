@@ -17,16 +17,17 @@ struct MainNavigationView: View {
                 
                 ContentView()
                 
-                NavigationLink(destination: ChallengeView(store: ChallengeStore(challenge: randomChallenge)),
+                NavigationLink(destination: ChallengeView(
+                    store: ChallengeStore(challenge: randomChallenge), rootIsActive: self.$isActive),
                                isActive: self.$isActive){
                     GetRandoNavLinkViewLabel()
                 }
+                .isDetailLink(false)
             }
             .navigationTitle("Challenges")
             .navigationBarHidden(true)
         }
     }
-    .isDetailLink(false)
 }
 
 
