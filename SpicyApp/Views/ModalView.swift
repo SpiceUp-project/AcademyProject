@@ -15,7 +15,7 @@ struct ModalView: View {
         self.challenge = challenge
     }
     
-
+    
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -42,11 +42,20 @@ struct ModalView: View {
                         Spacer()
                         
                         ScrollView {
-                            Text(challenge.challengeName)
-                                .font(.title)
-                                .multilineTextAlignment(.leading)
-                                .padding([.bottom, .trailing], 10)
-                                .bold()
+                            
+                            
+                            HStack {
+                                Text(challenge.challengeName)
+                                    .font(.title)
+                                    .fontWeight(.bold)
+                                    .multilineTextAlignment(.leading)
+                                //.padding([.bottom, .trailing], 0)
+                            }
+                            .frame(width: 350)
+                            //.background(Color.gray)
+                            
+                            
+                            
                             
                             HStack(alignment: .center) {
                                 ForEach(self.challenge.tags, id: \.self) { tag in
@@ -63,37 +72,57 @@ struct ModalView: View {
                                 .padding([.top, .bottom, .trailing], 6.0)
                                 
                             }
+                            Spacer()
+                                .frame(height: 18)
                             
-                            HStack {
-                                Image(systemName: "medal")
-                                Text("Earn \(self.challenge.points) points")
-                                    .font(.subheadline)
-                                    .foregroundColor(.black)
-                                    .padding(.trailing, 210.0)
+                            VStack{
+                                HStack {
+                                    
+                                    Image(systemName: "medal")
+                                    Text("Earn \(self.challenge.points) points")
+                                        .font(.subheadline)
+                                        .foregroundColor(.black)
+                                        .padding(.trailing, 210.0)
+                                }
+                                
+                                
+                                
+                                Spacer()
+                                    .frame(height: 18)
+                                
+                                Text ("Description")
+                                    .font(.body)
+                                    .multilineTextAlignment(.leading)
+                                //.padding([.top, .bottom, .trailing], 3.0)
+                                    .padding(.trailing, 257.0)
+                                    .bold()
+                                
+                                Spacer()
+                                
+                                Text (challenge.Description)
+                                    .font(.body)
+                                    .multilineTextAlignment(.leading)
+                                
+                                Spacer()
+                                    .frame(height: 18)
+                                
+                                Text ("Tips and Tricks")
+                                    .font(.body)
+                                    .multilineTextAlignment(.leading)
+                                //.padding([.top, .bottom, .trailing], 3.0)
+                                    .padding(.trailing, 230)
+                                    .bold()
+                                
+                                Spacer()
+                                
+                                Text (challenge.Tips)
+                                    .font(.body)
+                                    .multilineTextAlignment(.leading)
+                                
                             }
                             
-                            Text ("Description")
-                                .font(.body)
-                                .multilineTextAlignment(.leading)
-                                .padding([.top, .bottom, .trailing], 3.0)
-                                .padding(.trailing, 257.0)
-                                .bold()
-                            Text (challenge.Description)
-                                .font(.body)
-                                .multilineTextAlignment(.leading)
-                                .padding()
-                            
-                            Text ("Tips and Tricks")
-                                .font(.body)
-                                .multilineTextAlignment(.leading)
-                                .padding([.top, .bottom, .trailing], 3.0)
-                                .padding(.trailing, 235.0)
-                                .bold()
-                            
-                            Text (challenge.Tips)
-                                .font(.body)
-                                .multilineTextAlignment(.leading)
-                                .padding()
+                            .frame(width: 350)
+                            //.background(Color.gray)
                             
                             /*       HStack {
                              Image(systemName: "medal")
@@ -106,53 +135,60 @@ struct ModalView: View {
                             
                         }
                         
-                        
-                        HStack {
-                            NavigationLink(destination: ContentView()) {
+                      
+                            HStack {
+                                NavigationLink(destination: ContentView()) {
+                                    
+                                    Text("Dismiss          ")
+                                        .font(.title3)
+                                        .padding()
+                                        .foregroundColor(.black)
+                                        .background(Color("appGray"))
+                                        .cornerRadius(18)
+                                        .shadow(color: .gray, radius: 5, x: 0, y: 2)
+                                    
+                                }
                                 
-                                Text("Dismiss          ")
-                                    .font(.title3)
-                                    .padding()
-                                    .foregroundColor(.black)
-                                    .background(Color("appGray"))
-                                    .cornerRadius(18)
-                                    .shadow(color: .gray, radius: 5, x: 0, y: 2)
                                 
+                                NavigationLink(destination:  ChallengeView(store: ChallengeStore(challenge: challenge))) {
+                                    
+                                    Text("Accept               ")
+                                        .font(.title3)
+                                        .padding()
+                                        .foregroundColor(.black)
+                                        .background(Color("appYellow"))
+                                        .cornerRadius(18)
+                                        .shadow(color: .gray, radius: 5, x: 0, y: 2)
+                                    
+                                }
                             }
-                            
-                            
-                            NavigationLink(destination:  ChallengeView(store: ChallengeStore(challenge: challenge))) {
-                                
-                                Text("Accept               ")
-                                    .font(.title3)
-                                    .padding()
-                                    .foregroundColor(.black)
-                                    .background(Color("appYellow"))
-                                    .cornerRadius(18)
-                                    .shadow(color: .gray, radius: 5, x: 0, y: 2)
-                                
-                            }
-                        }
-                    }
-                            
-                            
-                        }
-                        
-                        
-                        
+                          
+                        /*
+                        .background(Color("appBeige"))
+                        .padding(.top, -40)
+                       .padding(.horizontal, -100)
+                       .blur(radius: 20)
+                         */
                     }
                     
+                    
                 }
+                
+                
+                
             }
-        }//zstack
-
-    
-    
-    
-    struct ModalView_Previews: PreviewProvider {
-        static var previews: some View {
-            ModalView(challenge: challenges[3])
+            
         }
     }
-    
+}//zstack
+
+
+
+
+struct ModalView_Previews: PreviewProvider {
+    static var previews: some View {
+        ModalView(challenge: challenges[1])
+    }
+}
+
 
