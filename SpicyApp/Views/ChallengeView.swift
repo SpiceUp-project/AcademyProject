@@ -168,13 +168,14 @@ struct ChallengeView: View {
                 
             }
             .padding(.bottom)
-        }.onAppear {
-            store.start()
+            .navigationTitle("Today's challenge")
+            .navigationBarHidden(true)
         }
-        .navigationTitle("Today's challenge")
-        .navigationBarHidden(true)
+            .onAppear {
+                store.start()
+            }
     }
-}
+
 
     
 struct ChallengeView_Previews: PreviewProvider {
