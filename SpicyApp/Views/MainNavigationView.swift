@@ -28,6 +28,7 @@ struct MainNavigationView: View {
             .navigationBarHidden(true)
         }
     }
+  //  .isDetailLink(false)
 }
 
 
