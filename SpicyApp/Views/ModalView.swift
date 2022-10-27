@@ -125,7 +125,7 @@ struct ModalView: View {
                                 .padding()
                                 .foregroundColor(.black)
                                 .background(Color("appGray"))
-                                .cornerRadius(18)
+                                .cornerRadius(10)
                                 .shadow(color: .gray, radius: 5, x: 0, y: 2)
                             
                         }
@@ -138,7 +138,7 @@ struct ModalView: View {
                                 .padding()
                                 .foregroundColor(.black)
                                 .background(Color("appYellow"))
-                                .cornerRadius(18)
+                                .cornerRadius(10)
                                 .shadow(color: .gray, radius: 5, x: 0, y: 2)
                             
                         }
