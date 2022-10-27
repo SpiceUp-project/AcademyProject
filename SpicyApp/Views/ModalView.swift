@@ -89,7 +89,7 @@ struct ModalView: View {
                         Text ("Tips and Tricks")
                             .font(.body)
                             .multilineTextAlignment(.leading)
-                            .padding([.top, .bottom, .trailing], 3.0)
+                            .padding([.top, .bottom, .trailing], 0)
                             .padding(.trailing, 235.0)
                             .bold()
                         
