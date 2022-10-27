@@ -104,7 +104,6 @@ struct ContentView: View {
                     .foregroundColor(.black)
                     .sheet(isPresented: $showView) {
                         ModalView(challenge: shuffledChallenges[3])
-                        
                     }
                 }
             }
