@@ -62,20 +62,32 @@ struct ChallengeView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width:350, height:350)
-                .scaledToFit()
+                .cornerRadius(10)
+                        .padding()
+                        .background(Color.white)
+                        .clipped()
+                        .shadow(color: Color.gray, radius: 10, x: 0, y: 0)
+                        .padding()
             
             HStack {
                 Text(store.challenge.challengeName)
                     .font(.title)
+                    .multilineTextAlignment(.leading)
                     .padding(.horizontal)
-                   
-                Spacer()
+                    
+                    
+                
+                
+                
             }
-           
+           Spacer()
           
             tagPills
                 .multilineTextAlignment(.trailing)
                 .padding(.horizontal)
+                .padding()
+            
+            
             
             Spacer()
 
@@ -106,6 +118,7 @@ struct ChallengeView: View {
             store.start()
         }
         .navigationTitle("Today's challenge")
+        
     }
 }
 
@@ -119,6 +132,7 @@ private extension ChallengeView {
                     .clipShape(RoundedRectangle(cornerRadius: 30))
                     .shadow(radius: 10)
             }
+            .padding()
     }
     
     var tagPills: some View {
@@ -126,13 +140,15 @@ private extension ChallengeView {
             HStack(alignment: .center) {
                 ForEach(store.challenge.tags, id: \.self) { category in
                     Text(category)
-                        .padding(5)
+                        .padding(9)
                         .background { Color("appYellow") }
                         .clipShape(RoundedRectangle(cornerRadius: 15))
                     
                     
                 }
             }
+            
+            
         }
     }
     
