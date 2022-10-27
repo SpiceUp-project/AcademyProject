@@ -55,14 +55,6 @@ struct ChallengeView: View {
     
     var body: some View {
         VStack {
-            Text("Today's Challenges")
-            
-                .font(.system(size: 32, weight: .heavy, design: .default))
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.top, 70)
-                .padding(.leading, 15)
-                .padding(.bottom, 10)
-            
             
             timer
                 .padding(.top, 10)
@@ -93,8 +85,6 @@ struct ChallengeView: View {
                     
                     
                     
-                    
-                    
                 }
                 Spacer()
                 
@@ -109,7 +99,6 @@ struct ChallengeView: View {
                 
                 
                 HStack(spacing:20){
-                    
                     NavigationLink ("Give up", destination:  GivingUpView())
                         .font(.title3)
                         .frame(width: 140)
@@ -129,14 +118,13 @@ struct ChallengeView: View {
                         .shadow(color: .gray, radius: 5, x: 0, y: 2)
                 }
                 .padding(.bottom)
-                Spacer()
+            
             }.onAppear {
                 store.start()
             }
             .navigationTitle("Today's challenge")
-            
-        }
-        
+    }
+    
     }
     
     private extension ChallengeView {
@@ -167,12 +155,7 @@ struct ChallengeView: View {
                 
                 
             }
-            .padding(.bottom)
-            .navigationTitle("Today's challenge")
-            .navigationBarHidden(true)
-        }
-            .onAppear {
-                store.start()
+            
             }
     }
 
