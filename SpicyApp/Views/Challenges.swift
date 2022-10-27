@@ -12,7 +12,7 @@ import SwiftUI
 
 struct Challenge: Hashable, CustomStringConvertible {
     var id: Int
-
+    
     let challengeName: String
     let points: Int
     let currentlyTaking: Int

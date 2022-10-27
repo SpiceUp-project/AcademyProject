@@ -45,6 +45,21 @@ struct ModalView: View {
                         .padding([.bottom, .trailing], 10)
                             .bold()
                         
+                        HStack(alignment: .center) {
+                            ForEach(self.challenge.tags, id: \.self) { tag in
+                                Text(tag)
+                                    .font(.footnote)
+                                    .padding([.top, .leading, .bottom], 5)
+                                    .padding(.horizontal, 20)
+                                
+                                    .background { Color("appYellow") }
+                                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                                    .lineLimit(1)
+                                //                                         .fixedSize(horizontal: false, vertical: true)
+                            }
+                            .padding([.top, .bottom, .trailing], 6.0)
+                            
+                        }
                         
                         HStack {
                             Image(systemName: "medal")
