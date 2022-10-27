@@ -160,7 +160,7 @@ struct ModalView: View {
     
     struct ModalView_Previews: PreviewProvider {
         static var previews: some View {
-            ModalView(challenge: challenges[1])
+            ModalView(challenge: challenges[3])
         }
     }
     
