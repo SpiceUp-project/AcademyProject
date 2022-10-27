@@ -1,5 +1,5 @@
 //
-//  ModelView_ChallengeView.swift
+//  ModalViewC1.swift
 //  SpicyApp
 //
 //  Created by Sophie Schweikert on 27.10.22.
@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct ModalView_Challenge: View {
+struct ModalViewC1: View {
     
     let challenge: Challenge
     
     init(challenge: Challenge) {
         self.challenge = challenge
+        
     }
     
     @Environment(\.presentationMode) var presentationMode
@@ -26,7 +27,6 @@ struct ModalView_Challenge: View {
                 VStack {
                     Button {
                         presentationMode.wrappedValue.dismiss()
-                        
                     }
                 label: {
                     Image(systemName: "x.circle")
@@ -102,39 +102,6 @@ struct ModalView_Challenge: View {
                 
                     
                     }
-
-                    
-                    HStack {
-                        Button {
-                            print("Edit button was tapped")
-                        } label: {
-                            Text("Dismiss          ")
-                                .font(.title3)
-                                .padding()
-                                .foregroundColor(.black)
-                                .background(Color("appGray"))
-                                .cornerRadius(18)
-                                .shadow(color: .gray, radius: 5, x: 0, y: 2)
-                            
-                        }
-                        
-                        Button {
-                            print("Edit button was tapped")
-                        } label: {
-                            Text("Accept               ")
-                                .font(.title3)
-                                .padding()
-                                .foregroundColor(.black)
-                                .background(Color("appYellow"))
-                                .cornerRadius(18)
-                                .shadow(color: .gray, radius: 5, x: 0, y: 2)
-                            
-                        }
-                        
-                        
-                    }
-                    
-                    
                     
                 }
                 
@@ -144,10 +111,11 @@ struct ModalView_Challenge: View {
     
     
     
-    struct ModalView_Previews: PreviewProvider {
+    struct ModalViewC1_Previews: PreviewProvider {
         static var previews: some View {
-            ModalView(challenge: challenges[0])
+            ModalViewC1(challenge: challenges[0])
         }
     }
     
 }
+
