@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainNavigationView: View {
     var randomChallenge: Challenge = challenges.randomElement()!
+    @State var isActive : Bool = false
     
     var body: some View {
         NavigationView {
@@ -16,16 +17,16 @@ struct MainNavigationView: View {
                 
                 ContentView()
                 
-                NavigationLink(destination: ChallengeView(store: ChallengeStore(challenge: randomChallenge))){
+                NavigationLink(destination: ChallengeView(store: ChallengeStore(challenge: randomChallenge)),
+                               isActive: self.$isActive){
                     GetRandoNavLinkViewLabel()
                 }
             }
             .navigationTitle("Challenges")
             .navigationBarHidden(true)
         }
-        
     }
-    
+    .isDetailLink(false)
 }
 
 

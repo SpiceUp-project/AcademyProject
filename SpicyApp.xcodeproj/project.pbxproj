@@ -97,10 +97,10 @@
 				1329397C29042C1300E5AAAC /* DateView.swift */,
 				D5ACE30529042A7100756F7A /* ChallengeView.swift */,
 				1329398229046A7A00E5AAAC /* MainNavigationView.swift */,
-				132939862904843C00E5AAAC /* TestView.swift */,
 				13BFB56A29085051008BA3B5 /* GetRandoNavLinkViewLabel.swift */,
 				457DC4052907F0C3006E0B2F /* ChallengeCompletionView.swift */,
 				457DC4092907FA1F006E0B2F /* GivingUpView.swift */,
+				132939862904843C00E5AAAC /* TestView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
