@@ -42,7 +42,7 @@ struct ModalView: View {
                         Text(challenge.challengeName)
                             .font(.title)
                             .multilineTextAlignment(.leading)
-                        .padding([.bottom, .trailing], 10)
+                            .padding([.bottom, .trailing], 10)
                             .bold()
                         
                         HStack(alignment: .center) {
@@ -75,27 +75,6 @@ struct ModalView: View {
                             .frame(height:20)
                         
                         
-                        HStack(alignment: .center) {
-                            ForEach(self.challenge.tags, id: \.self) { tag in
-                                Text(tag)
-                                    .font(.footnote)
-                                    .padding([.top, .leading, .bottom], 5)
-                                    .padding(.horizontal, 20)
-                                
-                                    .background { Color("appYellow") }
-                                    .clipShape(RoundedRectangle(cornerRadius: 15))
-                                    .lineLimit(1)
-                                //                                         .fixedSize(horizontal: false, vertical: true)
-                            }
-                            //.padding([.top, .bottom, .trailing], 6.0)
-                            
-                        }
-                        
-                        Spacer()
-                            .frame(height:20)
-                        
-                        
-                        
                         Text ("Description")
                             .font(.body)
                             .multilineTextAlignment(.leading)
@@ -114,7 +93,7 @@ struct ModalView: View {
                             .padding(.trailing, 235.0)
                             .bold()
                         
-                        Text (challenge.Tips + "\n")
+                        Text (challenge.Tips)
                             .font(.body)
                             .multilineTextAlignment(.leading)
                             .padding()
@@ -181,7 +160,7 @@ struct ModalView: View {
     
     struct ModalView_Previews: PreviewProvider {
         static var previews: some View {
-            ModalView(challenge: challenges[0])
+            ModalView(challenge: challenges[1])
         }
     }
     
