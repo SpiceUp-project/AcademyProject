@@ -19,17 +19,17 @@ struct TestView: View {
     var body: some View {
         
         
-            VStack {
-                Text(self.challenge.challengeName)
-                NavigationLink(destination: Text("Hello, World!")) {
-                    Image("_Messages-avatar")
-                        .resizable()
-                        .frame(width: 60, height: 60)
-                        .padding(EdgeInsets(top: 80, leading: 0, bottom: 0, trailing: 0))
-                }
+        VStack {
+            Text(self.challenge.challengeName)
+            NavigationLink(destination: Text("Hello, World!")) {
+                Image("_Messages-avatar")
+                    .resizable()
+                    .frame(width: 60, height: 60)
+                    .padding(EdgeInsets(top: 80, leading: 0, bottom: 0, trailing: 0))
             }
-            .navigationTitle("Test Title")
-            .navigationBarHidden(true)
+        }
+        .navigationTitle("Test Title")
+        .navigationBarHidden(true)
         
     }
 }

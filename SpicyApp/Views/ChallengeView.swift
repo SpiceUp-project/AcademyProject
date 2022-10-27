@@ -55,6 +55,14 @@ struct ChallengeView: View {
     
     var body: some View {
         VStack {
+            Text("Today's Challenges")
+            
+                .font(.system(size: 32, weight: .heavy, design: .default))
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.top, 70)
+                .padding(.leading, 15)
+                .padding(.bottom, 10)
+            
             
             timer
                 .padding(.top, 10)
@@ -159,9 +167,14 @@ struct ChallengeView: View {
                 
                 
             }
+            .padding(.bottom)
+        }.onAppear {
+            store.start()
         }
-        
+        .navigationTitle("Today's challenge")
+        .navigationBarHidden(true)
     }
+}
 
     
 struct ChallengeView_Previews: PreviewProvider {
