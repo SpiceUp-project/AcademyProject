@@ -45,5 +45,6 @@ struct MainNavigationView: View {
 struct MainNavigationView_Previews: PreviewProvider {
     static var previews: some View {
         MainNavigationView()
+            .environmentObject(Shared())
     }
 }

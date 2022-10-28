@@ -140,5 +140,6 @@ struct CardView_Previews: PreviewProvider {
         })
         .frame(height: 400)
         .padding()
+        .environmentObject(Shared())
     }
 }
