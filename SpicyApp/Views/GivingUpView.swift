@@ -26,9 +26,8 @@ struct GivingUpView: View {
                 .font(.system(size: 42, weight: .heavy, design: .default))
                 .padding(.bottom, 10)
             
-            Text("You always pass failure on your way to success! \nOn to the next..")
-                .multilineTextAlignment(.center)
-                .fontWeight(.medium)
+                Text("You always pass failure on your way to success! \nOn to the next..")
+                    .multilineTextAlignment(.center)
             
             Spacer()
             

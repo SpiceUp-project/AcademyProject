@@ -74,22 +74,22 @@ struct ModalViewC1: View {
                         }
                         
                         Text ("Description")
+                           .font(.system(size: 18.0, weight: .bold))
                             .font(.body)
                             .multilineTextAlignment(.leading)
                             .padding([.top, .bottom, .trailing], 3.0)
                             .padding(.trailing, 257.0)
-                            .bold()
                         Text (challenge.Description)
                             .font(.body)
                             .multilineTextAlignment(.leading)
                             .padding()
                         
                         Text ("Tips and Tricks")
+                            .font(.system(size: 18.0, weight: .bold))
                             .font(.body)
                             .multilineTextAlignment(.leading)
                             .padding([.top, .bottom, .trailing], 3.0)
                             .padding(.trailing, 235.0)
-                            .bold()
                         
                         Text (challenge.Tips)
                             .font(.body)
