@@ -66,46 +66,50 @@ struct ContentView: View {
                 
                 VStack(spacing: 24) {
                     
-                    Text("Challenges")
-                        .font(.system(size: 32, weight: .heavy, design: .default))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.top, 20)
-                    //                        .padding(.bottom, 10)
-                    
-                    DateView()
-                    Button {
-                        showView.toggle()
-                    } label: {
-                        ZStack {
-                            
-                            ForEach(self.shuffledChallenges, id: \.self) { challenge in
-                                Group {
-                                    // Range Operator
-                                    if let id = self.shuffledChallenges.firstIndex(of: challenge) {
-                                        // if (self.maxID - 3)...self.maxID ~= challenge.id {
-                                        if id < 4 {
-                                            CardView(challenge: challenge, onRemove: { removedChallenge in
-                                                // Remove that user from our array
-                                                self.shuffledChallenges.removeAll { $0.id == removedChallenge.id
-                                                }
-                                                self.shuffledChallenges.append(challenge)
-                                            })
-                                            //                                                 .animation(.spring())
-                                            .frame(width: self.getCardWidth(geometry, id: id), height: universalHeight(height: 400.0))
-                                            .offset(x: 0, y: self.getCardOffset(geometry, id: id + 1))
-                                            .padding(.top, 40)
+                    Group {
+                        
+                        Text("Challenges")
+                            .font(.system(size: 32, weight: .heavy, design: .default))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.top, 20)
+                        
+                        DateView()
+                        
+                        Button {
+                            showView.toggle()
+                        } label: {
+                            ZStack {
+                                
+                                ForEach(self.shuffledChallenges, id: \.self) { challenge in
+                                    Group {
+                                        // Range Operator
+                                        if let id = self.shuffledChallenges.firstIndex(of: challenge) {
+                                            
+                                            if id < 4 {
+                                                CardView(challenge: challenge, onRemove: { removedChallenge in
+                                                    // Remove that user from our array
+                                                    self.shuffledChallenges.removeAll { $0.id == removedChallenge.id
+                                                    }
+                                                    self.shuffledChallenges.append(challenge)
+                                                })
+                                                .frame(width: self.getCardWidth(geometry, id: id), height: universalHeight(height: 400.0))
+                                                .offset(x: 0, y: self.getCardOffset(geometry, id: id + 1))
+                                                .padding(.top, 40)
+                                            }
                                         }
                                     }
                                 }
                             }
+                            Spacer()
                         }
-                        Spacer()
+                        .foregroundColor(.black)
+                        .sheet(isPresented: $showView) {
+                            
+                            ModalView(challenge: shuffledChallenges[3])
+                            
+                        }
                     }
-                    .foregroundColor(.black)
-                    .sheet(isPresented: $showView) {
-                        ModalView(challenge: shuffledChallenges[3])
-                        
-                    }
+                    
                 }
             }
             

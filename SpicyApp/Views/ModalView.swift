@@ -11,11 +11,12 @@ struct ModalView: View {
     
     let challenge: Challenge
     
-    init(challenge: Challenge) {
-        self.challenge = challenge
-    }
+    @Binding var isModalActive : Bool
     
-
+    init(challenge: Challenge, isModalActive: Binding<Bool>) {
+        self.challenge = challenge
+        _isModalActive = isModalActive
+    }
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -29,7 +30,6 @@ struct ModalView: View {
                     VStack {
                         Button {
                             presentationMode.wrappedValue.dismiss()
-                            
                         }
                     label: {
                         Image(systemName: "x.circle")
@@ -58,7 +58,6 @@ struct ModalView: View {
                                         .background { Color("appYellow") }
                                         .clipShape(RoundedRectangle(cornerRadius: 15))
                                         .lineLimit(1)
-                                    //                                         .fixedSize(horizontal: false, vertical: true)
                                 }
                                 .padding([.top, .bottom, .trailing], 6.0)
                                 
@@ -95,17 +94,7 @@ struct ModalView: View {
                                 .multilineTextAlignment(.leading)
                                 .padding()
                             
-                            /*       HStack {
-                             Image(systemName: "medal")
-                             .foregroundColor(.black)
-                             .font(.headline)
-                             } */
-                            
-                            
-                            
-                            
                         }
-                        
                         
                         HStack {
                             NavigationLink(destination: ContentView()) {
@@ -120,9 +109,8 @@ struct ModalView: View {
                                 
                             }
                             
-                            
-                            NavigationLink(destination:  ChallengeView(store: ChallengeStore(challenge: challenge))) {
-                                
+                            NavigationLink(destination:  ChallengeView(store: ChallengeStore(challenge: challenge), rootIsActive: self.$isModalActive),
+                                           isActive: self.$isModalActive) {
                                 Text("Accept               ")
                                     .font(.title3)
                                     .padding()
@@ -130,28 +118,12 @@ struct ModalView: View {
                                     .background(Color("appYellow"))
                                     .cornerRadius(18)
                                     .shadow(color: .gray, radius: 5, x: 0, y: 2)
-                                
                             }
                         }
                     }
-                            
-                            
-                        }
-                        
-                        
-                        
-                    }
-                    
                 }
             }
         }
-        
-    
-    
-    struct ModalView_Previews: PreviewProvider {
-        static var previews: some View {
-            ModalView(challenge: challenges[0])
-        }
     }
-    
+}
 
