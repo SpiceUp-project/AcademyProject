@@ -48,14 +48,7 @@ struct ChallengeCompletionView: View {
             .background(Color("appYellow"))
             .cornerRadius(10)
             .shadow(color: .gray, radius: 5, x: 0, y: 2)
-            //            NavigationLink ("See your achievements!", destination:  TestView(challenge: challenges[1]))
-            //                .font(.title3)
-            //                .frame(width: 320)
-            //                .padding()
-            //                .foregroundColor(.black)
-            //                .background(Color("appYellow"))
-            //                .cornerRadius(10)
-            //                .shadow(color: .gray, radius: 5, x: 0, y: 2)
+            
             Spacer()
             
         }
@@ -63,13 +56,3 @@ struct ChallengeCompletionView: View {
         .navigationBarHidden(true)
     }
 }
-
-
-
-//struct ChallengeCompletionView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NavigationView {
-//            ChallengeCompletionView(shouldPopToRootView: rootIsActive)
-//        }
-//    }
-//}

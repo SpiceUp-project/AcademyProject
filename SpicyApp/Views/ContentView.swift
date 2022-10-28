@@ -111,19 +111,9 @@ struct ContentView: View {
                             
                         }
                     }
-                    
                 }
             }
-            
         }.padding()
             .onAppear{shared.currentChallenge = shuffledChallenges[3]}
     }
 }
-
-
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView(contentIsActive: self.$isActive)
-//    }
-//}
-

@@ -19,7 +19,6 @@ struct GetRandoNavLinkViewLabel: View {
             .background(Color("appYellow"))
             .cornerRadius(10)
             .shadow(color: .gray, radius: 5, x: 0, y: 2)
-        
     }
 }
 

@@ -41,34 +41,31 @@ struct ModalView: View {
                         
                         ScrollView {
                             
+                            Text(challenge.challengeName)
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding([.bottom, .trailing], 0)
+                            .padding(.leading)
                             
-                            HStack {
-                                Text(challenge.challengeName)
-                                    .font(.title)
-                                    .fontWeight(.bold)
-                                    .multilineTextAlignment(.leading)
-                                //.padding([.bottom, .trailing], 0)
-                            }
-                            .frame(width: 350)
-                            //.background(Color.gray)
-                            
-                            
-                            
-                            
+
                             HStack(alignment: .center) {
                                 ForEach(self.challenge.tags, id: \.self) { tag in
                                     Text(tag)
                                         .font(.footnote)
-                                        .padding([.top, .leading, .bottom], 5)
-                                        .padding(.horizontal, 20)
-                                    
+                                        .padding(5)
+                                        .padding(.horizontal, 10)
                                         .background { Color("appYellow") }
                                         .clipShape(RoundedRectangle(cornerRadius: 15))
                                         .lineLimit(1)
                                 }
-                                .padding([.top, .bottom, .trailing], 6.0)
                                 
+                                Spacer()
+                                    .frame(height: 18)
                             }
+                            .frame(alignment: .leading)
+                            .padding(.leading)
+                            
                             Spacer()
                                 .frame(height: 18)
                             
@@ -81,16 +78,13 @@ struct ModalView: View {
                                         .foregroundColor(.black)
                                         .padding(.trailing, 210.0)
                                 }
-                                
-                                
-                                
+                               
                                 Spacer()
                                     .frame(height: 18)
                                 
                                 Text ("Description")
                                     .font(.body)
                                     .multilineTextAlignment(.leading)
-                                //.padding([.top, .bottom, .trailing], 3.0)
                                     .padding(.trailing, 257.0)
                                     .bold()
                                 
@@ -106,7 +100,6 @@ struct ModalView: View {
                                 Text ("Tips and Tricks")
                                     .font(.body)
                                     .multilineTextAlignment(.leading)
-                                //.padding([.top, .bottom, .trailing], 3.0)
                                     .padding(.trailing, 230)
                                     .bold()
                                 
@@ -115,53 +108,39 @@ struct ModalView: View {
                                 Text (challenge.Tips)
                                     .font(.body)
                                     .multilineTextAlignment(.leading)
-                                
                             }
-                            
                             .frame(width: 350)
-                            //.background(Color.gray)
                             
                         }
                         
-                        
-                        
-                        
-                        
-                        HStack {
-//                            Button {
-//                                presentationMode.wrappedValue.dismiss()
-//                            }
-//                        label: {
-//                            Text("Bac")
-//                                .font(.title3)
-//                                .frame(width: 330)
-//                                .padding()
-//                                .foregroundColor(.black)
-//                                .background(Color("appGray"))
-//                                .cornerRadius(18)
-//                                .shadow(color: .gray, radius: 5, x: 0, y: 2)
-//                        }
+                            //                            Button {
+                            //                                presentationMode.wrappedValue.dismiss()
+                            //                            }
+                            //                        label: {
+                            //                            Text("Bac")
+                            //                                .font(.title3)
+                            //                                .frame(width: 330)
+                            //                                .padding()
+                            //                                .foregroundColor(.black)
+                            //                                .background(Color("appGray"))
+                            //                                .cornerRadius(18)
+                            //                                .shadow(color: .gray, radius: 5, x: 0, y: 2)
+                            //                        }
                             
-//                            NavigationLink(destination:  ChallengeView(store: ChallengeStore(challenge: challenge), rootIsActive: self.$isModalActive),
-//                                           isActive: self.$isModalActive) {
-//                                Text("Accept               ")
-//                                    .font(.title3)
-//                                    .padding()
-//                                    .foregroundColor(.black)
-//                                    .background(Color("appYellow"))
-//                                    .cornerRadius(18)
-//                                    .shadow(color: .gray, radius: 5, x: 0, y: 2)
-//                            }
-//                                           .isDetailLink(false)
-                        }
+                            //                            NavigationLink(destination:  ChallengeView(store: ChallengeStore(challenge: challenge), rootIsActive: self.$isModalActive),
+                            //                                           isActive: self.$isModalActive) {
+                            //                                Text("Accept               ")
+                            //                                    .font(.title3)
+                            //                                    .padding()
+                            //                                    .foregroundColor(.black)
+                            //                                    .background(Color("appYellow"))
+                            //                                    .cornerRadius(18)
+                            //                                    .shadow(color: .gray, radius: 5, x: 0, y: 2)
+                            //                            }
+                            //                                           .isDetailLink(false)
                     }
-                    
                 }
-                
-                
-                
             }
-            
         }
     }
 }

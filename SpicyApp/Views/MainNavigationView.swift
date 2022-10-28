@@ -15,7 +15,7 @@ struct MainNavigationView: View {
     @EnvironmentObject var shared: Shared
     
     var body: some View {
-
+        
         if shared.isAccepted == false {
             NavigationView {
                 VStack {
@@ -27,7 +27,7 @@ struct MainNavigationView: View {
                         GetRandoNavLinkViewLabel()
                     }
                 }
-               
+                
                 .navigationBarHidden(true)
             }
         } else {
@@ -36,14 +36,14 @@ struct MainNavigationView: View {
                     
                     ChallengeView(store: ChallengeStore(challenge: randomChallenge), rootIsActive: $isActive) 
                     
-                    }
                 }
-               
-                .navigationBarHidden(true)
-
             }
+            
+            .navigationBarHidden(true)
+            
         }
     }
+}
 
 
 

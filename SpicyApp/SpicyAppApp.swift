@@ -15,7 +15,7 @@ struct SpicyAppApp: App {
         WindowGroup {
             MainNavigationView()
                 .environmentObject(shared)
-            }
         }
     }
+}
 
