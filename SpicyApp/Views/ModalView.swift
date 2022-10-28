@@ -11,12 +11,14 @@ struct ModalView: View {
     
     let challenge: Challenge
     
-    init(challenge: Challenge) {
+    @Binding var isModalActive : Bool
+    
+    init(challenge: Challenge, isModalActive: Binding<Bool>) {
         self.challenge = challenge
+        _isModalActive = isModalActive
     }
     
-    
-    
+
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -29,7 +31,6 @@ struct ModalView: View {
                     VStack {
                         Button {
                             presentationMode.wrappedValue.dismiss()
-                            
                         }
                     label: {
                         Image(systemName: "x.circle")
@@ -67,7 +68,6 @@ struct ModalView: View {
                                         .background { Color("appYellow") }
                                         .clipShape(RoundedRectangle(cornerRadius: 15))
                                         .lineLimit(1)
-                                    //                                         .fixedSize(horizontal: false, vertical: true)
                                 }
                                 .padding([.top, .bottom, .trailing], 6.0)
                                 
@@ -124,70 +124,53 @@ struct ModalView: View {
                             .frame(width: 350)
                             //.background(Color.gray)
                             
-                            /*       HStack {
-                             Image(systemName: "medal")
-                             .foregroundColor(.black)
-                             .font(.headline)
-                             } */
-                            
-                            
-                            
-                            
                         }
                         
-                      
-                            HStack {
-                                NavigationLink(destination: ContentView()) {
-                                    
-                                    Text("Dismiss          ")
-                                        .font(.title3)
-                                        .padding()
-                                        .foregroundColor(.black)
-                                        .background(Color("appGray"))
-                                        .cornerRadius(18)
-                                        .shadow(color: .gray, radius: 5, x: 0, y: 2)
-                                    
-                                }
-                                
-                                
-                                NavigationLink(destination:  ChallengeView(store: ChallengeStore(challenge: challenge))) {
-                                    
-                                    Text("Accept               ")
-                                        .font(.title3)
-                                        .padding()
-                                        .foregroundColor(.black)
-                                        .background(Color("appYellow"))
-                                        .cornerRadius(18)
-                                        .shadow(color: .gray, radius: 5, x: 0, y: 2)
-                                    
-                                }
+
+                    
+                    
+
+                        HStack {
+                            Button {
+                                presentationMode.wrappedValue.dismiss()
                             }
-                          
-                        /*
-                        .background(Color("appBeige"))
-                        .padding(.top, -40)
-                       .padding(.horizontal, -100)
-                       .blur(radius: 20)
-                         */
+                        label: {
+                            Text("Dismiss          ")
+                                .font(.title3)
+                                .padding()
+                                .foregroundColor(.black)
+                                .background(Color("appGray"))
+                                .cornerRadius(18)
+                                .shadow(color: .gray, radius: 5, x: 0, y: 2)
+                        }
+//                            NavigationLink(destination:  ChallengeView(store: ChallengeStore(challenge: challenge), rootIsActive: self.$isModalActive),
+//                                           isActive: self.$isModalActive) {
+                                
+                                
+                                
+                            
+                            
+                            NavigationLink(destination:  ChallengeView(store: ChallengeStore(challenge: challenge), rootIsActive: self.$isModalActive),
+                                           isActive: self.$isModalActive) {
+                                Text("Accept               ")
+                                    .font(.title3)
+                                    .padding()
+                                    .foregroundColor(.black)
+                                    .background(Color("appYellow"))
+                                    .cornerRadius(18)
+                                    .shadow(color: .gray, radius: 5, x: 0, y: 2)
+                            }
+                            .isDetailLink(false)
+                        }
                     }
-                    
-                    
+
                 }
                 
                 
                 
             }
-            
+
         }
-    }
-}//zstack
-
-
-
-
-struct ModalView_Previews: PreviewProvider {
-    static var previews: some View {
-        ModalView(challenge: challenges[1])
     }
 }
 
