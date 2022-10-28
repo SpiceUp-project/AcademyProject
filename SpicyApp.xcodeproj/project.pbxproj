@@ -15,6 +15,7 @@
 		457DC4062907F0C3006E0B2F /* ChallengeCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457DC4052907F0C3006E0B2F /* ChallengeCompletionView.swift */; };
 		457DC40A2907FA1F006E0B2F /* GivingUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457DC4092907FA1F006E0B2F /* GivingUpView.swift */; };
 		4F85556029002DAE00786E46 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F85555F29002DAE00786E46 /* ModalView.swift */; };
+		4F96E188290BC29F00ED73BC /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F96E187290BC29F00ED73BC /* Shared.swift */; };
 		4FB5C70628FD7086003AA55E /* SpicyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5C70528FD7086003AA55E /* SpicyAppApp.swift */; };
 		4FB5C70828FD7086003AA55E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5C70728FD7086003AA55E /* ContentView.swift */; };
 		4FB5C70A28FD7087003AA55E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FB5C70928FD7087003AA55E /* Assets.xcassets */; };
@@ -22,6 +23,9 @@
 		4FB5C73028FD729F003AA55E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5C72F28FD729F003AA55E /* CardView.swift */; };
 		D50A043E2907379B002606DE /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50A043D2907379B002606DE /* Color+Extension.swift */; };
 		D50DC2D22908217A00D6AAE0 /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACE30529042A7100756F7A /* ChallengeView.swift */; };
+
+		D537E57D290A9186004B0528 /* ModalViewC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D537E57C290A9186004B0528 /* ModalViewC1.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +54,7 @@
 		457DC4052907F0C3006E0B2F /* ChallengeCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCompletionView.swift; sourceTree = "<group>"; };
 		457DC4092907FA1F006E0B2F /* GivingUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GivingUpView.swift; sourceTree = "<group>"; };
 		4F85555F29002DAE00786E46 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
+		4F96E187290BC29F00ED73BC /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		4FB5C70228FD7086003AA55E /* SpicyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpicyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FB5C70528FD7086003AA55E /* SpicyAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpicyAppApp.swift; sourceTree = "<group>"; };
 		4FB5C70728FD7086003AA55E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,6 +64,8 @@
 		4FB5C71C28FD7087003AA55E /* SpicyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpicyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FB5C72F28FD729F003AA55E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		D50A043D2907379B002606DE /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+
+		D537E57C290A9186004B0528 /* ModalViewC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewC1.swift; sourceTree = "<group>"; };
 		D5ACE30529042A7100756F7A /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,11 +103,15 @@
 				4F85555F29002DAE00786E46 /* ModalView.swift */,
 				1329397C29042C1300E5AAAC /* DateView.swift */,
 				D5ACE30529042A7100756F7A /* ChallengeView.swift */,
+
+				D537E57C290A9186004B0528 /* ModalViewC1.swift */,
+
 				1329398229046A7A00E5AAAC /* MainNavigationView.swift */,
 				13BFB56A29085051008BA3B5 /* GetRandoNavLinkViewLabel.swift */,
 				457DC4052907F0C3006E0B2F /* ChallengeCompletionView.swift */,
 				457DC4092907FA1F006E0B2F /* GivingUpView.swift */,
 				132939862904843C00E5AAAC /* TestView.swift */,
+				4F96E187290BC29F00ED73BC /* Shared.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -273,8 +284,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F96E188290BC29F00ED73BC /* Shared.swift in Sources */,
 				1329397D29042C1300E5AAAC /* DateView.swift in Sources */,
 				4FB5C70828FD7086003AA55E /* ContentView.swift in Sources */,
+				D537E57D290A9186004B0528 /* ModalViewC1.swift in Sources */,
 				D50A043E2907379B002606DE /* Color+Extension.swift in Sources */,
 				457DC4062907F0C3006E0B2F /* ChallengeCompletionView.swift in Sources */,
 				4FB5C73028FD729F003AA55E /* CardView.swift in Sources */,

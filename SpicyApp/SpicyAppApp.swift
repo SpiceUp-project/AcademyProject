@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct SpicyAppApp: App {
+    @StateObject var shared: Shared = Shared()
+    
     var body: some Scene {
         WindowGroup {
             MainNavigationView()
+                .environmentObject(shared)
             }
         }
     }
