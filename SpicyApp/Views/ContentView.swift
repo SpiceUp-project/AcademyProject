@@ -27,6 +27,8 @@ struct ContentView: View {
     /// List of challenges
     ///
     @State var shuffledChallenges: [Challenge] = challenges.shuffled()
+    @EnvironmentObject var shared: Shared
+    
     
     
     let randomChallenge = challenges.randomElement()
@@ -54,6 +56,7 @@ struct ContentView: View {
     }
     
     var body: some View {
+
         
         VStack {
             
@@ -110,11 +113,13 @@ struct ContentView: View {
             }
             
         }.padding()
+            .onAppear{shared.currentChallenge = shuffledChallenges[3]}
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(Shared())
     }
 }
