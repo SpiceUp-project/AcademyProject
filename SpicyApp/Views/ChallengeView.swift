@@ -46,15 +46,27 @@ final class ChallengeStore: ObservableObject {
 }
 
 struct ChallengeView: View {
+    
+    @Binding var rootIsActive : Bool
+    
     @ObservedObject var store: ChallengeStore
     @State var showView1 = false
     
-    init(store: ChallengeStore) {
+    init(store: ChallengeStore, rootIsActive: Binding<Bool>) {
         self.store = store
+        _rootIsActive = rootIsActive
     }
     
     var body: some View {
         VStack {
+
+            Text("Today's Challenges")
+                .font(.system(size: 32, weight: .heavy, design: .default))
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.top, 70)
+                .padding(.leading, 15)
+                .padding(.bottom, 10)
+
             
             timer
                 .padding(.top, 10)
@@ -95,11 +107,12 @@ struct ChallengeView: View {
                 
                 
                 
+
                 Spacer()
-                
+
                 
                 HStack(spacing:20){
-                    NavigationLink ("Give up", destination:  GivingUpView())
+                    NavigationLink ("Give up", destination:  GivingUpView(shouldPopToRootView: self.$rootIsActive))
                         .font(.title3)
                         .frame(width: 140)
                         .padding()
@@ -108,7 +121,7 @@ struct ChallengeView: View {
                         .cornerRadius(10)
                         .shadow(color: .gray, radius: 5, x: 0, y: 2)
                     
-                    NavigationLink ("Done", destination:  ChallengeCompletionView())
+                    NavigationLink ("Done", destination:  ChallengeCompletionView(shouldPopToRootView: self.$rootIsActive))
                         .font(.title3)
                         .frame(width: 140)
                         .padding()
@@ -160,11 +173,10 @@ struct ChallengeView: View {
     }
 
 
-    
-struct ChallengeView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView{
-            ChallengeView(store: ChallengeStore(challenge: challenges[0]))
-        }
-    }
-}
+//struct ChallengeView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationView{
+//            ChallengeView(store: ChallengeStore(challenge: challenges[0]))
+//        }
+//    }
+//}

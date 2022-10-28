@@ -14,6 +14,7 @@ struct MainNavigationView: View {
     @EnvironmentObject var shared: Shared
     
     var body: some View {
+
         if shared.isAccepted == false {
             NavigationView {
                 VStack {
@@ -32,14 +33,19 @@ struct MainNavigationView: View {
             NavigationView {
                 VStack {
                     
-                    ChallengeView(store: ChallengeStore(challenge: shared.currentChallenge))
+                    ChallengeView(store: ChallengeStore(challenge: randomChallenge)),
+                                   isActive: self.$isActive)
                     }
                 }
                
                 .navigationBarHidden(true)
+
             }
         }
     }
+
+}
+
 
 
 struct MainNavigationView_Previews: PreviewProvider {

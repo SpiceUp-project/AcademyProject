@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct GivingUpView: View {
+    
+    @Binding var shouldPopToRootView : Bool
+    
     var body: some View {
         
         VStack {
@@ -28,14 +31,25 @@ struct GivingUpView: View {
             
             Spacer()
             
-            NavigationLink ("Get new challenge", destination:  MainNavigationView())
-                .font(.title3)
-                .frame(width: 320)
-                .padding()
-                .foregroundColor(.black)
-                .background(Color("appYellow"))
-                .cornerRadius(10)
-                .shadow(color: .gray, radius: 5, x: 0, y: 2)
+            Button (action: { self.shouldPopToRootView = false } ){
+                Text("Go back to challenges!")
+            }
+            .font(.title3)
+            .frame(width: 320)
+            .padding()
+            .foregroundColor(.black)
+            .background(Color("appYellow"))
+            .cornerRadius(10)
+            .shadow(color: .gray, radius: 5, x: 0, y: 2)
+            
+            //            NavigationLink ("Get new challenge", destination:  MainNavigationView())
+            //                .font(.title3)
+            //                .frame(width: 320)
+            //                .padding()
+            //                .foregroundColor(.black)
+            //                .background(Color("appYellow"))
+            //                .cornerRadius(10)
+            //                .shadow(color: .gray, radius: 5, x: 0, y: 2)
             Spacer()
         }
         .navigationTitle("Test Title")
@@ -44,10 +58,10 @@ struct GivingUpView: View {
 }
 
 
-struct GivingUpView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            GivingUpView()
-        }
-    }
-}
+//struct GivingUpView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationView {
+//            GivingUpView(shouldPopToRootView: self.$rootIsActive)
+//        }
+//    }
+//}
