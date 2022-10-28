@@ -136,6 +136,7 @@ struct ChallengeView: View {
                 store.start()
             }
             .navigationTitle("Today's challenge")
+            .navigationBarHidden(true)
     }
     
     }

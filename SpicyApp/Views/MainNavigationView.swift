@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainNavigationView: View {
     var randomChallenge: Challenge = challenges.randomElement()!
+    
     @State var isActive : Bool = false
     
     @EnvironmentObject var shared: Shared
@@ -19,9 +20,9 @@ struct MainNavigationView: View {
             NavigationView {
                 VStack {
                     
-                    ContentView()
+                    ContentView(contentIsActive: $isActive)
                     
-                    NavigationLink(destination: ChallengeView(store: ChallengeStore(challenge: randomChallenge)),
+                    NavigationLink(destination: ChallengeView(store: ChallengeStore(challenge: randomChallenge), rootIsActive: $isActive),
                                    isActive: self.$isActive){
                         GetRandoNavLinkViewLabel()
                     }
@@ -33,8 +34,7 @@ struct MainNavigationView: View {
             NavigationView {
                 VStack {
                     
-                    ChallengeView(store: ChallengeStore(challenge: randomChallenge)),
-                                   isActive: self.$isActive)
+                    ChallengeView(store: ChallengeStore(challenge: randomChallenge), rootIsActive: $isActive)
                     }
                 }
                
@@ -44,7 +44,7 @@ struct MainNavigationView: View {
         }
     }
 
-}
+
 
 
 
