@@ -10,7 +10,7 @@ import SwiftUI
 struct GetRandoNavLinkViewLabel: View {
     
     var body: some View {
-        Label("Get random challenge", systemImage: "dice.fill")
+        Label("Decide for me", systemImage: "dice.fill")
             .font(.title2)
             .frame(width: 330)
             .padding()

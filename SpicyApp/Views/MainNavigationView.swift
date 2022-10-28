@@ -11,23 +11,35 @@ struct MainNavigationView: View {
     var randomChallenge: Challenge = challenges.randomElement()!
     @State var isActive : Bool = false
     
+    @EnvironmentObject var shared: Shared
+    
     var body: some View {
-        NavigationView {
-            VStack {
-                
-                ContentView()
-                
-                NavigationLink(destination: ChallengeView(store: ChallengeStore(challenge: randomChallenge)),
-                               isActive: self.$isActive){
-                    GetRandoNavLinkViewLabel()
+        if shared.isAccepted == false {
+            NavigationView {
+                VStack {
+                    
+                    ContentView()
+                    
+                    NavigationLink(destination: ChallengeView(store: ChallengeStore(challenge: randomChallenge)),
+                                   isActive: self.$isActive){
+                        GetRandoNavLinkViewLabel()
+                    }
                 }
+               
+                .navigationBarHidden(true)
             }
-            .navigationTitle("Challenges")
-            .navigationBarHidden(true)
+        } else {
+            NavigationView {
+                VStack {
+                    
+                    ChallengeView(store: ChallengeStore(challenge: shared.currentChallenge))
+                    }
+                }
+               
+                .navigationBarHidden(true)
+            }
         }
     }
-    //.isDetailLink(false)
-}
 
 
 struct MainNavigationView_Previews: PreviewProvider {

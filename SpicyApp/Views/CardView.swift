@@ -11,6 +11,8 @@ struct CardView: View {
     @State private var translation: CGSize = .zero
     @State private var swipeStatus: LikeDislike = .none
     
+    @EnvironmentObject var shared: Shared
+    
     private var challenge: Challenge
     private var onRemove: (_ challenge: Challenge) -> Void
     
@@ -109,6 +111,7 @@ struct CardView: View {
                         
                         if (self.getGesturePercentage(geometry, from: value)) >= self.thresholdPercentage {
                             self.swipeStatus = .like
+                            shared.isAccepted = true
                         } else if self.getGesturePercentage(geometry, from: value) <= -self.thresholdPercentage {
                             self.swipeStatus = .dislike
                         } else {
