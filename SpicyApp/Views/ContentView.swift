@@ -29,7 +29,6 @@ struct ContentView: View {
     @State var shuffledChallenges: [Challenge] = challenges.shuffled()
     @EnvironmentObject var shared: Shared
     
-    
     let randomChallenge = challenges.randomElement()
     
     @Binding var contentIsActive: Bool
@@ -57,7 +56,6 @@ struct ContentView: View {
     }
     
     var body: some View {
-
         
         VStack {
             
@@ -109,7 +107,7 @@ struct ContentView: View {
                         .foregroundColor(.black)
                         .sheet(isPresented: $showView) {
                             
-                            ModalView(challenge: shuffledChallenges[3], isModalActive: self.$contentIsActive)
+                            ModalView(challenge: shuffledChallenges[3])
                             
                         }
                     }

@@ -34,7 +34,8 @@ struct MainNavigationView: View {
             NavigationView {
                 VStack {
                     
-                    ChallengeView(store: ChallengeStore(challenge: randomChallenge), rootIsActive: $isActive)
+                    ChallengeView(store: ChallengeStore(challenge: randomChallenge), rootIsActive: $isActive) 
+                    
                     }
                 }
                

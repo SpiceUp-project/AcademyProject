@@ -46,7 +46,7 @@ struct CardView: View {
                         .clipped()
                     
                     if self.swipeStatus == .like {
-                        Text("LIKE")
+                        Text("Accept")
                             .font(.headline)
                             .padding()
                             .cornerRadius(10)
@@ -57,7 +57,7 @@ struct CardView: View {
                             ).padding(24)
                             .rotationEffect(Angle.degrees(-45))
                     } else if self.swipeStatus == .dislike {
-                        Text("DISLIKE")
+                        Text("Dismiss")
                             .font(.headline)
                             .padding()
                             .cornerRadius(10)
@@ -84,7 +84,6 @@ struct CardView: View {
                                     .background { Color("appYellow") }
                                     .clipShape(RoundedRectangle(cornerRadius: 15))
                                     .lineLimit(1)
-                                //                                         .fixedSize(horizontal: false, vertical: true)
                             }
                         }
                         Text("Earn \(self.challenge.points) points")
@@ -96,12 +95,10 @@ struct CardView: View {
                 }
                 .padding(.horizontal)
             }
-            //             .frame(height: 500)
             .padding(.bottom)
             .background(Color.white)
             .cornerRadius(10)
             .shadow(radius: 5)
-            //             .animation(.interactiveSpring())
             .offset(x: self.translation.width, y: 0)
             .rotationEffect(.degrees(Double(self.translation.width / geometry.size.width) * 25), anchor: .bottom)
             .gesture(

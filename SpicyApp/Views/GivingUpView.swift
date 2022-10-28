@@ -10,6 +10,7 @@ import SwiftUI
 struct GivingUpView: View {
     
     @Binding var shouldPopToRootView : Bool
+    @EnvironmentObject var shared: Shared
     
     var body: some View {
         
@@ -31,7 +32,10 @@ struct GivingUpView: View {
             
             Spacer()
             
-            Button (action: { self.shouldPopToRootView = false } ){
+            Button (action: {
+                self.shouldPopToRootView = false
+                shared.isAccepted = false
+            } ){
                 Text("Go back to challenges!")
             }
             .font(.title3)

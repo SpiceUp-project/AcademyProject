@@ -11,14 +11,11 @@ struct ModalView: View {
     
     let challenge: Challenge
     
-    @Binding var isModalActive : Bool
-    
-    init(challenge: Challenge, isModalActive: Binding<Bool>) {
+    init(challenge: Challenge) {
         self.challenge = challenge
-        _isModalActive = isModalActive
     }
     
-
+    
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -126,52 +123,51 @@ struct ModalView: View {
                             
                         }
                         
-
-                    
-                    
-
+                        
+                        
+                        
+                        
                         HStack {
-                            Button {
-                                presentationMode.wrappedValue.dismiss()
-                            }
-                        label: {
-                            Text("Dismiss          ")
-                                .font(.title3)
-                                .padding()
-                                .foregroundColor(.black)
-                                .background(Color("appGray"))
-                                .cornerRadius(18)
-                                .shadow(color: .gray, radius: 5, x: 0, y: 2)
-                        }
+//                            Button {
+//                                presentationMode.wrappedValue.dismiss()
+//                            }
+//                        label: {
+//                            Text("Bac")
+//                                .font(.title3)
+//                                .frame(width: 330)
+//                                .padding()
+//                                .foregroundColor(.black)
+//                                .background(Color("appGray"))
+//                                .cornerRadius(18)
+//                                .shadow(color: .gray, radius: 5, x: 0, y: 2)
+//                        }
+                            
 //                            NavigationLink(destination:  ChallengeView(store: ChallengeStore(challenge: challenge), rootIsActive: self.$isModalActive),
 //                                           isActive: self.$isModalActive) {
-                                
-                                
-                                
-                            
-                            
-                            NavigationLink(destination:  ChallengeView(store: ChallengeStore(challenge: challenge), rootIsActive: self.$isModalActive),
-                                           isActive: self.$isModalActive) {
-                                Text("Accept               ")
-                                    .font(.title3)
-                                    .padding()
-                                    .foregroundColor(.black)
-                                    .background(Color("appYellow"))
-                                    .cornerRadius(18)
-                                    .shadow(color: .gray, radius: 5, x: 0, y: 2)
-                            }
-                            .isDetailLink(false)
+//                                Text("Accept               ")
+//                                    .font(.title3)
+//                                    .padding()
+//                                    .foregroundColor(.black)
+//                                    .background(Color("appYellow"))
+//                                    .cornerRadius(18)
+//                                    .shadow(color: .gray, radius: 5, x: 0, y: 2)
+//                            }
+//                                           .isDetailLink(false)
                         }
                     }
-
+                    
                 }
                 
                 
                 
             }
-
+            
         }
     }
 }
 
-
+struct ModalView_Previews: PreviewProvider {
+    static var previews: some View {
+        ModalView(challenge: challenges[0])
+    }
+}

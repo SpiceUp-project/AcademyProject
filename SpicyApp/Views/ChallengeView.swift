@@ -66,7 +66,6 @@ struct ChallengeView: View {
                 .padding(.top, 70)
                 .padding(.leading, 15)
                 .padding(.bottom, 10)
-
             
             timer
                 .padding(.top, 10)
