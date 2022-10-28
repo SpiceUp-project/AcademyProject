@@ -28,8 +28,9 @@ struct ContentView: View {
     ///
     @State var shuffledChallenges: [Challenge] = challenges.shuffled()
     
-    
     let randomChallenge = challenges.randomElement()
+    
+    @Binding var contentIsActive: Bool
     
     /// Return the CardViews width for the given offset in the array
     /// - Parameters:
@@ -105,7 +106,7 @@ struct ContentView: View {
                         .foregroundColor(.black)
                         .sheet(isPresented: $showView) {
                             
-                            ModalView(challenge: shuffledChallenges[3])
+                            ModalView(challenge: shuffledChallenges[3], isModalActive: self.$contentIsActive)
                             
                         }
                     }
@@ -117,8 +118,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView(contentIsActive: self.$isActive)
+//    }
+//}

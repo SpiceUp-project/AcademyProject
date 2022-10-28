@@ -97,17 +97,24 @@ struct ModalView: View {
                         }
                         
                         HStack {
-                            NavigationLink(destination: ContentView()) {
-                                
-                                Text("Dismiss          ")
-                                    .font(.title3)
-                                    .padding()
-                                    .foregroundColor(.black)
-                                    .background(Color("appGray"))
-                                    .cornerRadius(18)
-                                    .shadow(color: .gray, radius: 5, x: 0, y: 2)
-                                
+                            Button {
+                                presentationMode.wrappedValue.dismiss()
                             }
+                        label: {
+                            Text("Dismiss          ")
+                                .font(.title3)
+                                .padding()
+                                .foregroundColor(.black)
+                                .background(Color("appGray"))
+                                .cornerRadius(18)
+                                .shadow(color: .gray, radius: 5, x: 0, y: 2)
+                        }
+//                            NavigationLink(destination:  ChallengeView(store: ChallengeStore(challenge: challenge), rootIsActive: self.$isModalActive),
+//                                           isActive: self.$isModalActive) {
+                                
+                                
+                                
+                            
                             
                             NavigationLink(destination:  ChallengeView(store: ChallengeStore(challenge: challenge), rootIsActive: self.$isModalActive),
                                            isActive: self.$isModalActive) {
@@ -119,6 +126,7 @@ struct ModalView: View {
                                     .cornerRadius(18)
                                     .shadow(color: .gray, radius: 5, x: 0, y: 2)
                             }
+                            .isDetailLink(false)
                         }
                     }
                 }

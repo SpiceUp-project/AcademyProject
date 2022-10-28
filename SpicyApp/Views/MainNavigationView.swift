@@ -15,7 +15,7 @@ struct MainNavigationView: View {
         NavigationView {
             VStack {
                 
-                ContentView()
+                ContentView(contentIsActive: self.$isActive)
                 
                 NavigationLink(destination: ChallengeView(
                     store: ChallengeStore(challenge: randomChallenge), rootIsActive: self.$isActive),
@@ -28,7 +28,6 @@ struct MainNavigationView: View {
             .navigationBarHidden(true)
         }
     }
-  //  .isDetailLink(false)
 }
 
 
