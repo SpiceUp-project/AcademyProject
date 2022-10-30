@@ -9,7 +9,7 @@ import Foundation
 
 final class ChallengeStore: ObservableObject {
     @Published var challenge: Challenge
-    @Published var timerLabel: String = "00:00"
+    @Published var timerLabel: String = "00:00:00"
     
     init(challenge: Challenge) {
         self.challenge = challenge
@@ -21,7 +21,7 @@ final class ChallengeStore: ObservableObject {
     }
     
     func updateTimer() {
-        Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { timer in
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             self.updateLabel()
         }
         self.updateLabel()
@@ -34,9 +34,10 @@ final class ChallengeStore: ObservableObject {
         timerLabel = convertSecondsToTimeLabel(remainingChallengeTime)
     }
     
-    private func convertSecondsToTimeLabel(_ seconds: TimeInterval) -> String {
-        let hour = Int(seconds / 3600)
-        let minutes = Int(seconds / 60) % 60
-        return String(format: "%02d:%02d", hour, minutes)
+    private func convertSecondsToTimeLabel(_ totalSeconds: TimeInterval) -> String {
+        let hour = Int(totalSeconds / 3600)
+        let minutes = Int(totalSeconds / 60) % 60
+        let seconds = Int(totalSeconds) % 60
+        return String(format: "%02d:%02d:%02d", hour, minutes, seconds)
     }
 }
