@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct GivingUpView: View {
+    
+    @Binding var shouldPopToRootView : Bool
+    @EnvironmentObject var shared: Shared
+    
     var body: some View {
         
         VStack {
@@ -22,20 +26,25 @@ struct GivingUpView: View {
                 .font(.system(size: 42, weight: .heavy, design: .default))
                 .padding(.bottom, 10)
             
-            Text("You always pass failure on your way to success! \nOn to the next..")
-                .multilineTextAlignment(.center)
-                .fontWeight(.medium)
+                Text("You always pass failure on your way to success! \nOn to the next..")
+                    .multilineTextAlignment(.center)
             
             Spacer()
             
-            NavigationLink ("Get new challenge", destination:  MainNavigationView())
-                .font(.title3)
-                .frame(width: 320)
-                .padding()
-                .foregroundColor(.black)
-                .background(Color("appYellow"))
-                .cornerRadius(10)
-                .shadow(color: .gray, radius: 5, x: 0, y: 2)
+            Button (action: {
+                self.shouldPopToRootView = false
+                shared.isAccepted = false
+            } ){
+                Text("Go back to challenges!")
+            }
+            .font(.title3)
+            .frame(width: 320)
+            .padding()
+            .foregroundColor(.black)
+            .background(Color("appYellow"))
+            .cornerRadius(10)
+            .shadow(color: .gray, radius: 5, x: 0, y: 2)
+            
             Spacer()
         }
         .navigationTitle("Test Title")
@@ -43,11 +52,3 @@ struct GivingUpView: View {
     }
 }
 
-
-struct GivingUpView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            GivingUpView()
-        }
-    }
-}

@@ -13,7 +13,6 @@ struct ModalViewC1: View {
     
     init(challenge: Challenge) {
         self.challenge = challenge
-        
     }
     
     @Environment(\.presentationMode) var presentationMode
@@ -40,26 +39,31 @@ struct ModalViewC1: View {
                     
                     ScrollView {
                         Text(challenge.challengeName)
-                            .font(.title)
-                            .multilineTextAlignment(.leading)
-                            .padding([.bottom, .trailing], 10)
-                            .bold()
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding([.bottom, .trailing], 0)
+                        .padding(.leading)
                         
                         HStack(alignment: .center) {
-                                ForEach(self.challenge.tags, id: \.self) { tag in
-                                    Text(tag)
-                                        .font(.footnote)
-                                        .padding([.top, .leading, .bottom], 5)
-                                        .padding(.horizontal, 20)
-            
-                                        .background { Color("appYellow") }
-                                        .clipShape(RoundedRectangle(cornerRadius: 15))
-                                        .lineLimit(1)
-//                                         .fixedSize(horizontal: false, vertical: true)
-                                   }
-                                .padding([.top, .bottom, .trailing], 6.0)
-                            
+                            ForEach(self.challenge.tags, id: \.self) { tag in
+                                Text(tag)
+                                    .font(.footnote)
+                                    .padding(5)
+                                    .padding(.horizontal, 10)
+                                    .background { Color("appYellow") }
+                                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                                    .lineLimit(1)
                             }
+                            
+                            Spacer()
+                                .frame(height: 18)
+                        }
+                        .frame(alignment: .leading)
+                        .padding(.leading)
+                        
+                        Spacer()
+                            .frame(height: 18)
                         
                         HStack {
                             Image(systemName: "medal")
@@ -70,45 +74,33 @@ struct ModalViewC1: View {
                         }
                         
                         Text ("Description")
+                           .font(.system(size: 18.0, weight: .bold))
                             .font(.body)
                             .multilineTextAlignment(.leading)
                             .padding([.top, .bottom, .trailing], 3.0)
                             .padding(.trailing, 257.0)
-                            .bold()
                         Text (challenge.Description)
                             .font(.body)
                             .multilineTextAlignment(.leading)
                             .padding()
                         
                         Text ("Tips and Tricks")
+                            .font(.system(size: 18.0, weight: .bold))
                             .font(.body)
                             .multilineTextAlignment(.leading)
                             .padding([.top, .bottom, .trailing], 3.0)
                             .padding(.trailing, 235.0)
-                            .bold()
                         
                         Text (challenge.Tips)
                             .font(.body)
                             .multilineTextAlignment(.leading)
                             .padding()
                         
-                 /*       HStack {
-                            Image(systemName: "medal")
-                                .foregroundColor(.black)
-                                .font(.headline)
-                            } */
-                        
-                        
-                
-                    
                     }
-                    
                 }
-                
             }
         }
     }
-    
     
     
     struct ModalViewC1_Previews: PreviewProvider {
@@ -116,6 +108,5 @@ struct ModalViewC1: View {
             ModalViewC1(challenge: challenges[0])
         }
     }
-    
 }
 

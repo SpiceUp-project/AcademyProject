@@ -11,6 +11,8 @@ struct CardView: View {
     @State private var translation: CGSize = .zero
     @State private var swipeStatus: LikeDislike = .none
     
+    @EnvironmentObject var shared: Shared
+    
     private var challenge: Challenge
     private var onRemove: (_ challenge: Challenge) -> Void
     
@@ -44,7 +46,7 @@ struct CardView: View {
                         .clipped()
                     
                     if self.swipeStatus == .like {
-                        Text("LIKE")
+                        Text("Accept")
                             .font(.headline)
                             .padding()
                             .cornerRadius(10)
@@ -55,7 +57,7 @@ struct CardView: View {
                             ).padding(24)
                             .rotationEffect(Angle.degrees(-45))
                     } else if self.swipeStatus == .dislike {
-                        Text("DISLIKE")
+                        Text("Dismiss")
                             .font(.headline)
                             .padding()
                             .cornerRadius(10)
@@ -82,7 +84,6 @@ struct CardView: View {
                                     .background { Color("appYellow") }
                                     .clipShape(RoundedRectangle(cornerRadius: 15))
                                     .lineLimit(1)
-                                //                                         .fixedSize(horizontal: false, vertical: true)
                             }
                         }
                         Text("Earn \(self.challenge.points) points")
@@ -94,12 +95,10 @@ struct CardView: View {
                 }
                 .padding(.horizontal)
             }
-            //             .frame(height: 500)
             .padding(.bottom)
             .background(Color.white)
             .cornerRadius(10)
             .shadow(radius: 5)
-            //             .animation(.interactiveSpring())
             .offset(x: self.translation.width, y: 0)
             .rotationEffect(.degrees(Double(self.translation.width / geometry.size.width) * 25), anchor: .bottom)
             .gesture(
@@ -109,6 +108,7 @@ struct CardView: View {
                         
                         if (self.getGesturePercentage(geometry, from: value)) >= self.thresholdPercentage {
                             self.swipeStatus = .like
+                            shared.isAccepted = true
                         } else if self.getGesturePercentage(geometry, from: value) <= -self.thresholdPercentage {
                             self.swipeStatus = .dislike
                         } else {
@@ -137,5 +137,6 @@ struct CardView_Previews: PreviewProvider {
         })
         .frame(height: 400)
         .padding()
+        .environmentObject(Shared())
     }
 }

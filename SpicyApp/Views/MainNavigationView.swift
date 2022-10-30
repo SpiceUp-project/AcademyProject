@@ -9,29 +9,49 @@ import SwiftUI
 
 struct MainNavigationView: View {
     var randomChallenge: Challenge = challenges.randomElement()!
+    
     @State var isActive : Bool = false
     
+    @EnvironmentObject var shared: Shared
+    
     var body: some View {
-        NavigationView {
-            VStack {
+        
+        if shared.isAccepted == false {
+            NavigationView {
+                VStack {
+                    
+                    ContentView(contentIsActive: $isActive)
+                    
+                    NavigationLink(destination: ChallengeView(store: ChallengeStore(challenge: randomChallenge), rootIsActive: $isActive),
+                                   isActive: self.$isActive){
+                        GetRandoNavLinkViewLabel()
+                    }
+                }
                 
-                ContentView()
-                
-                NavigationLink(destination: ChallengeView(store: ChallengeStore(challenge: randomChallenge)),
-                               isActive: self.$isActive){
-                    GetRandoNavLinkViewLabel()
+                .navigationBarHidden(true)
+            }
+        } else {
+            NavigationView {
+                VStack {
+                    
+                    ChallengeView(store: ChallengeStore(challenge: randomChallenge), rootIsActive: $isActive) 
+                    
                 }
             }
-            .navigationTitle("Challenges")
+            
             .navigationBarHidden(true)
+            
         }
     }
-    //.isDetailLink(false)
 }
+
+
+
 
 
 struct MainNavigationView_Previews: PreviewProvider {
     static var previews: some View {
         MainNavigationView()
+            .environmentObject(Shared())
     }
 }
