@@ -133,9 +133,9 @@ private extension ChallengeView {
 }
 
 struct ChallengeView_Previews: PreviewProvider {
-static var previews: some View {
-NavigationView{
-ChallengeView(store: ChallengeStore(challenge: challenges[0]))
-}
-}
+    static var previews: some View {
+        NavigationView{
+            ChallengeView(store: ChallengeStore(challenge: challenges[0]), rootIsActive: .constant(false))
+        }
+    }
 }
